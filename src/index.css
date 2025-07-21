@@ -1,0 +1,277 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5% 64.9%;
+
+    --radius: 0.5rem;
+    
+    /* Custom anime colors */
+    --anime-primary: #4361ee;
+    --anime-secondary: #3a0ca3;
+    --anime-tertiary: #4895ef;
+    --anime-dark: #0f172a;
+    --anime-light: #f8fafc;
+    --anime-purple: #8b5cf6;
+    --anime-light-purple: #c4b5fd;
+    --anime-deep-purple: #4c1d95;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Change primary to purple in dark mode */
+    --primary: 267 83% 60%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 267 83% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 267 83% 60%;
+    
+    /* Custom anime colors for dark mode */
+    --anime-primary: #8b5cf6;
+    --anime-secondary: #7c3aed;
+    --anime-tertiary: #a78bfa;
+    --anime-dark: #1e1b4b;
+    --anime-light: #f3f4f6;
+    --anime-purple: #8b5cf6;
+    --anime-light-purple: #c4b5fd;
+    --anime-deep-purple: #4c1d95;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl lg:text-2xl;
+  }
+  
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .anime-card {
+    @apply bg-card text-card-foreground rounded-lg border border-border shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 overflow-hidden dark:hover:shadow-glow-sm;
+  }
+
+  .status-badge {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .glass {
+    @apply bg-background/80 backdrop-blur-sm border border-border rounded-lg shadow-sm;
+  }
+
+  .glass-dark {
+    @apply dark:bg-background/60 dark:backdrop-blur-md dark:border-white/10 dark:shadow-glow-sm;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold mb-6 after:content-[''] after:block after:w-16 after:h-1 after:bg-primary after:mt-2;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-gray-700 to-gray-900 dark:from-white dark:to-gray-300 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-anime-tertiary to-anime-primary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent;
+  }
+
+  .nav-link {
+    @apply relative hover:text-primary transition-colors after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full;
+  }
+
+  .manga-bg {
+    @apply bg-no-repeat bg-cover bg-center opacity-50 grayscale-[60%] blur-[1px] dark:opacity-30 dark:grayscale-[80%] dark:blur-[1px];
+  }
+
+  .btn-glow {
+    @apply dark:hover:shadow-glow transition-shadow;
+  }
+  
+  /* Custom button with pulse */
+  .btn-anime {
+    @apply relative overflow-hidden transform transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+  
+  .btn-anime::after {
+    @apply content-[''] absolute inset-0 bg-white/20 scale-0 rounded-md transition-transform duration-500 ease-out;
+  }
+  
+  .btn-anime:hover::after {
+    @apply scale-100;
+  }
+}
+
+/* Shadow effect for dark mode */
+@layer utilities {
+  .shadow-glow {
+    box-shadow: 0 0 15px 2px rgba(139, 92, 246, 0.3);
+  }
+  
+  .shadow-glow-sm {
+    box-shadow: 0 0 8px 1px rgba(139, 92, 246, 0.2);
+  }
+  
+  /* Enhanced animations */
+  .animate-pulse-slow {
+    animation: pulse-slow 3s infinite;
+  }
+  
+  .hover-grow {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+  
+  /* Add semi-transparent overlay */
+  .overlay-gradient {
+    @apply relative overflow-hidden;
+  }
+  
+  .overlay-gradient::after {
+    @apply content-[''] absolute inset-0 bg-gradient-to-t from-background/80 to-transparent pointer-events-none;
+  }
+}
+
+/* Remove unused styles from App.css and integrate them here */
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding: 2rem;
+  }
+}
+
+/* Custom pulse animation for cards and elements */
+.pulse-subtle {
+  animation: pulse-subtle 3s infinite;
+}
+
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+/* Pulse animation for buttons and highlights */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Smooth scroll indicator animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
