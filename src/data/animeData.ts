@@ -41,7 +41,7 @@ export const animeData: Anime[] = [
     id: 2,
     title: "Fullmetal Alchemist: Brotherhood",
     imageUrl:
-      "https://i.pinimg.com/736x/fe/46/fe/fe46fe7d71bc130d04ed4097811a66a5.jpg",
+      "https://i.pinimg.com/originals/3a/35/b6/3a35b6bb7f00fe6346ff81559d36e945.gif",
     description:
       "Two brothers search for a Philosopher's Stone after an attempt to revive their deceased mother goes wrong, leaving them in damaged physical forms.",
     genres: ["Adventure", "Dark Fantasy", "Steampunk"],
@@ -53,7 +53,7 @@ export const animeData: Anime[] = [
     id: 3,
     title: "Death Note",
     imageUrl:
-      "https://i.pinimg.com/736x/48/fd/cb/48fdcbddf68722612ab9c83c43ec2b8f.jpg",
+      "https://i.pinimg.com/originals/b2/f3/eb/b2f3eb41b12064f908ecd1a337e46658.gif",
     description:
       "A high school student discovers a supernatural notebook that grants him the power to kill anyone whose name he writes in it.",
     genres: ["Thriller", "Psychological", "Supernatural"],
@@ -113,7 +113,7 @@ export const animeData: Anime[] = [
     id: 8,
     title: "Hunter x Hunter",
     imageUrl:
-      "https://i.pinimg.com/736x/2a/ec/21/2aec2151a4b7fd442823f2235d6ccde8.jpg",
+      "https://i.pinimg.com/originals/49/ab/24/49ab24125bf09bad9a774628b1b1fd70.gif",
     description:
       "A young boy sets out to become a Hunter, a specialized profession that requires hunting down treasures, beasts, or even other people.",
     genres: ["Adventure", "Fantasy", "Martial Arts"],
@@ -125,7 +125,7 @@ export const animeData: Anime[] = [
     id: 9,
     title: "Your Name",
     imageUrl:
-      "https://i.pinimg.com/736x/e1/b0/dc/e1b0dcced90203de43c7514e9b81e0a1.jpg",
+      "https://i.pinimg.com/originals/4b/cf/aa/4bcfaacc3c497169cd788c574fb446ba.gif",
     description:
       "Two strangers find themselves linked in a bizarre way. When a connection forms, will distance be the only thing to keep them apart?",
     genres: ["Romance", "Supernatural", "Drama"],
@@ -149,7 +149,7 @@ export const animeData: Anime[] = [
     id: 11,
     title: "Cowboy Bebop",
     imageUrl:
-      "https://i.pinimg.com/736x/d2/ba/06/d2ba063efe6e8ae6422a0a7106db46b2.jpg",
+      "https://i.pinimg.com/originals/d3/f7/e3/d3f7e3c37d8fb937ad1762578048c2d2.gif",
     description:
       "The futuristic misadventures of a ragtag crew of bounty hunters as they travel the solar system looking for the next job.",
     genres: ["Space Western", "Neo-noir", "Sci-Fi"],
@@ -185,7 +185,7 @@ export const animeData: Anime[] = [
     id: 14,
     title: "One Piece",
     imageUrl:
-      "https://i.pinimg.com/736x/6d/af/28/6daf288b13835c8299aa7ee322d74117.jpg",
+      "https://i.pinimg.com/originals/9c/f5/0c/9cf50c5cde5a32614e100cb44bb1fe2f.gif",
     description:
       "Monkey D. Luffy sets out to sea to become the King of Pirates and find the legendary One Piece treasure.",
     genres: ["Adventure", "Fantasy", "Comedy"],
@@ -197,7 +197,7 @@ export const animeData: Anime[] = [
     id: 15,
     title: "Spirited Away",
     imageUrl:
-      "https://i.pinimg.com/736x/89/d9/93/89d993a6452905d75d9fe9a056191760.jpg",
+      "https://i.pinimg.com/originals/6d/71/e2/6d71e24e6d6ef7bf33b36637c0c117c2.gif",
     description:
       "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, where humans are changed into beasts.",
     genres: ["Adventure", "Fantasy", "Supernatural"],
@@ -221,7 +221,7 @@ export const animeData: Anime[] = [
     id: 17,
     title: "Mob Psycho 100",
     imageUrl:
-      "https://i.pinimg.com/736x/1a/a9/d3/1aa9d35829801b2511d92aff40cf1ce3.jpg",
+      "https://i.pinimg.com/originals/8c/55/58/8c55589f5eef5722c406d5a29cf42dcf.gif",
     description:
       "A powerful young psychic tries to live a normal life and suppress his abilities, but trouble always finds him in this visually intense and emotionally rich story.",
     genres: ["Action", "Supernatural", "Comedy"],
@@ -245,7 +245,7 @@ export const animeData: Anime[] = [
     id: 19,
     title: "Black Clover",
     imageUrl:
-      "https://i.pinimg.com/736x/14/77/90/1477902e4775fa161244c80faf613424.jpg",
+      "https://i.pinimg.com/originals/55/56/33/5556337a9f822696a13d7cc5f9159ee3.gif",
     description:
       "In a world where magic is everything, two boys born without magic strive to become the Wizard King — proving that determination can overcome fate.",
     genres: ["Action", "Fantasy", "Shounen"],
@@ -257,7 +257,7 @@ export const animeData: Anime[] = [
     id: 20,
     title: "Erased",
     imageUrl:
-      "https://i.pinimg.com/736x/e9/b3/f0/e9b3f099901f8b48a8f2496c1231a5e1.jpg",
+      "https://i.pinimg.com/originals/e2/ac/cb/e2accbd8b2be19937e464259e3828dca.gif",
     description:
       "A man with a mysterious ability to go back in time is sent 18 years into the past to prevent a series of kidnappings and murders — including his mother's.",
     genres: ["Mystery", "Psychological", "Supernatural"],
@@ -269,7 +269,7 @@ export const animeData: Anime[] = [
     id: 26,
     title: "Vinland Saga",
     imageUrl:
-      "https://i.pinimg.com/736x/22/f3/0f/22f30fb7aade292378cb2bd9f4686691.jpg",
+      "https://i.pinimg.com/originals/12/28/e9/1228e930999b8e2beeab65c8df5a98df.gif",
     description:
       "Set in the Viking era, a young warrior seeks revenge for his father’s death while navigating the brutal world of warfare, politics, and personal growth.",
     genres: ["Action", "Adventure", "Historical"],
@@ -305,7 +305,7 @@ export const animeData: Anime[] = [
     id: 29,
     title: "Neon Genesis Evangelion",
     imageUrl:
-      "https://i.pinimg.com/736x/e7/7b/a1/e77ba14dff7ed30b5eff9f06522e3546.jpg",
+      "https://i.pinimg.com/originals/8e/69/60/8e696084f36bcac49dba529498ed7119.gif",
     description:
       "In a post-apocalyptic world, teenagers pilot giant bio-mechanical robots to protect humanity from mysterious beings known as Angels. A deeply psychological and symbolic mecha series.",
     genres: ["Mecha", "Psychological", "Sci-Fi"],
@@ -317,7 +317,7 @@ export const animeData: Anime[] = [
     id: 30,
     title: "Bleach",
     imageUrl:
-      "https://i.pinimg.com/736x/80/39/50/8039502c3eb16ac20b65f0cd19d9acf1.jpg",
+      "https://i.pinimg.com/originals/27/d8/0e/27d80eca9c8246357149c1315ed2fc25.gif",
     description:
       "The story follows Ichigo Kurosaki, a teenager with the ability to see ghosts, who is given the powers of a Soul Reaper to protect the living from evil spirits.",
     genres: ["Action", "Supernatural", "Shounen"],
@@ -341,7 +341,7 @@ export const animeData: Anime[] = [
     id: 32,
     title: "A Silent Voice",
     imageUrl:
-      "https://i.pinimg.com/736x/b6/5d/01/b65d010a1adf2db1b1be608bb80bcb07.jpg",
+      "https://i.pinimg.com/originals/a1/a6/6c/a1a66c90e7884ebc43e8506234655df5.gif",
     description:
       "Shoya Ishida seeks redemption for bullying a deaf girl, Shoko Nishimiya, in his childhood. As he tries to make amends, he learns about the consequences of his past actions and begins to understand the value of true friendship.",
     genres: ["Drama", "Romance", "Slice of Life"],
@@ -353,7 +353,7 @@ export const animeData: Anime[] = [
     id: 33,
     title: "Anohana: The Flower We Saw That Day",
     imageUrl:
-      "https://i.pinimg.com/736x/bb/65/8a/bb658a6f0df6d8cda376c1df0617c3a8.jpg",
+      "https://i.pinimg.com/originals/f2/c6/ba/f2c6ba5ecacebfd7c56e83b60e5b2e9e.gif",
     description:
       "Years after the death of their childhood friend, Menma, the group of friends must confront their unresolved grief when Menma’s spirit reappears and asks for their help to fulfill her final wish.",
     genres: ["Drama", "Slice of Life", "Supernatural"],
@@ -365,7 +365,7 @@ export const animeData: Anime[] = [
     id: 34,
     title: "Gintama",
     imageUrl:
-      "https://i.pinimg.com/736x/e6/0f/22/e60f224b3367758df28b98b4116f6847.jpg",
+      "https://i.pinimg.com/originals/00/dc/be/00dcbef2478116f39637f4493d263420.gif",
     description:
       "In an alternate Edo-period Japan invaded by aliens, a samurai named Gintoki runs an odd-jobs business with his friends, blending slapstick comedy with heartfelt moments and epic battles.",
     genres: ["Comedy", "Action", "Sci-Fi", "Parody"],
@@ -377,7 +377,7 @@ export const animeData: Anime[] = [
     id: 35,
     title: "Haikyuu!!",
     imageUrl:
-      "https://i.pinimg.com/736x/e3/e1/2a/e3e12a5e730c9108b9202ed457e7bee1.jpg",
+      "https://i.pinimg.com/originals/60/e7/af/60e7af6c4c0e65c95b3016b273847dc9.gif",
     description:
       "Inspired by a professional volleyball player, a short high school student joins his school's team, striving to overcome challenges and lead his team to nationals.",
     genres: ["Sports", "Comedy", "Drama"],
@@ -389,7 +389,7 @@ export const animeData: Anime[] = [
     id: 36,
     title: "Made in Abyss",
     imageUrl:
-      "https://i.pinimg.com/736x/de/3f/f1/de3ff19cf2bc9887396b6788aaa6dd44.jpg",
+      "https://i.pinimg.com/originals/98/02/61/9802617bbe337210e87a3245e6349710.gif",
     description:
       "A young girl and her robot companion descend into a mysterious, dangerous abyss to uncover its secrets, facing beauty and horror in equal measure.",
     genres: ["Adventure", "Fantasy", "Horror"],
@@ -413,7 +413,7 @@ export const animeData: Anime[] = [
     id: 38,
     title: "Re:Zero - Starting Life in Another World",
     imageUrl:
-      "https://i.pinimg.com/736x/03/67/6c/03676cafe95d1d19069b60550e79480d.jpg",
+      "https://i.pinimg.com/originals/ab/2e/95/ab2e95e23e90983c4acf69ab0b9039b8.gif",
     description:
       "A young man is transported to a fantasy world where he discovers he can return to a checkpoint after death, using this ability to save those he loves.",
     genres: ["Fantasy", "Drama", "Thriller"],
@@ -425,7 +425,7 @@ export const animeData: Anime[] = [
     id: 39,
     title: "Kimi no Todoke: From Me to You",
     imageUrl:
-      "https://i.pinimg.com/736x/dc/7c/c0/dc7cc053f75a39a2573b5cf1173d69f0.jpg",
+      "https://i.pinimg.com/originals/6e/f0/5d/6ef05ddfc397c0b6ecc942d3a9fde064.gif",
     description:
       "A shy girl, misunderstood due to her resemblance to a horror character, slowly opens up to her classmates and finds love with a popular boy.",
     genres: ["Romance", "Slice of Life", "Comedy"],
@@ -456,6 +456,726 @@ export const animeData: Anime[] = [
     episodes: 25,
     rating: 8.6,
     releaseYear: 1997,
+  },
+  {
+    id: 42,
+    title: "Dr. Stone",
+    imageUrl:
+      "https://i.pinimg.com/originals/f5/f9/5e/f5f95e8aa2e582c965b290b9181811dd.gif",
+    description:
+      "After a mysterious phenomenon petrifies humanity, a scientifically inclined teenager awakens to rebuild civilization using the power of science.",
+    genres: ["Adventure", "Sci-Fi", "Shounen"],
+    episodes: 35,
+    rating: 8.3,
+    releaseYear: 2019,
+  },
+  {
+    id: 43,
+    title: "Clannad: After Story",
+    imageUrl:
+      "https://i.pinimg.com/originals/12/bc/6a/12bc6a091b282e34a43c28abbed47eda.gif",
+    description:
+      "Tomoya and Nagisa face the challenges of adulthood, family, and loss in this emotional continuation of their high school romance.",
+    genres: ["Drama", "Romance", "Supernatural"],
+    episodes: 24,
+    rating: 8.9,
+    releaseYear: 2008,
+  },
+  {
+    id: 44,
+    title: "Blue Lock",
+    imageUrl:
+      "https://i.pinimg.com/originals/95/13/c9/9513c90be5af985db65f85da4307ec44.gif",
+    description:
+      "A group of high school soccer players compete in a ruthless training program to become Japan’s ultimate striker and dominate the world stage.",
+    genres: ["Sports", "Drama", "Psychological"],
+    episodes: 24,
+    rating: 8.4,
+    releaseYear: 2022,
+  },
+  {
+    id: 45,
+    title: "JoJo’s Bizarre Adventure",
+    imageUrl:
+      "https://i.pinimg.com/originals/56/60/47/56604719fe6970d7b8406bd792ba81e8.gif",
+    description:
+      "The Joestar family battles supernatural foes across generations, wielding unique powers called Stands in a stylish, action-packed saga.",
+    genres: ["Action", "Adventure", "Supernatural"],
+    episodes: 190,
+    rating: 8.5,
+    releaseYear: 2012,
+  },
+  {
+    id: 46,
+    title: "Princess Mononoke",
+    imageUrl:
+      "https://i.pinimg.com/originals/c4/a7/1c/c4a71c2fe8e97e4f2f44cb83d4ff6dd7.gif",
+    description:
+      "A young warrior becomes entangled in a conflict between forest gods and human industrialization, exploring themes of nature and humanity.",
+    genres: ["Adventure", "Fantasy", "Historical"],
+    episodes: 1,
+    rating: 8.7,
+    releaseYear: 1997,
+  },
+  {
+    id: 47,
+    title: "Fairy Tail",
+    imageUrl:
+      "https://i.pinimg.com/originals/b2/8b/0b/b28b0b00cbed89672bb641ec77ba9f30.gif",
+    description:
+      "A young mage joins the rowdy Fairy Tail guild, embarking on magical adventures filled with friendship, battles, and quests.",
+    genres: ["Action", "Fantasy", "Comedy"],
+    episodes: 328,
+    rating: 7.9,
+    releaseYear: 2009,
+  },
+  {
+    id: 48,
+    title: "March Comes in Like a Lion",
+    imageUrl:
+      "https://i.pinimg.com/originals/27/fa/86/27fa86949ef8d96ffd5e7b52cc0806f1.gif",
+    description:
+      "A young professional shogi player battles depression and loneliness, finding solace in a kind family and his passion for the game.",
+    genres: ["Drama", "Slice of Life", "Psychological"],
+    episodes: 44,
+    rating: 8.6,
+    releaseYear: 2016,
+  },
+  {
+    id: 49,
+    title: "Overlord",
+    imageUrl:
+      "https://i.pinimg.com/originals/3e/1b/15/3e1b1599e538e4c63309883c8b2a9a2c.gif",
+    description:
+      "A gamer is trapped in a virtual world as a powerful skeletal overlord, leading his NPC followers to conquer a new reality.",
+    genres: ["Fantasy", "Action", "Isekai"],
+    episodes: 52,
+    rating: 7.9,
+    releaseYear: 2015,
+  },
+  {
+    id: 50,
+    title: "Konosuba: God’s Blessing on This Wonderful World!",
+    imageUrl:
+      "https://i.pinimg.com/originals/3a/e5/1d/3ae51dcd831643b62cb47bc26538b3e7.gif",
+    description:
+      "A shut-in is reincarnated in a fantasy world with a useless goddess, leading to hilarious misadventures with a quirky party.",
+    genres: ["Comedy", "Fantasy", "Isekai"],
+    episodes: 20,
+    rating: 8.1,
+    releaseYear: 2016,
+  },
+  {
+    id: 51,
+    title: "Akame ga Kill!",
+    imageUrl:
+      "https://i.pinimg.com/originals/5a/17/79/5a1779467c381b587cf7ccf7c2d5f830.gif",
+    description:
+      "A young swordsman joins a rebel assassin group to overthrow a corrupt empire, facing brutal battles and moral dilemmas.",
+    genres: ["Action", "Dark Fantasy", "Tragedy"],
+    episodes: 24,
+    rating: 7.8,
+    releaseYear: 2014,
+  },
+  {
+    id: 52,
+    title: "Monogatari Series",
+    imageUrl:
+      "https://i.pinimg.com/originals/7a/a8/42/7aa842344a48111a95e77baddeff3e44.gif",
+    description:
+      "A high school student encounters supernatural oddities and helps girls afflicted by them, blending witty dialogue and psychological depth.",
+    genres: ["Supernatural", "Mystery", "Comedy"],
+    episodes: 100,
+    rating: 8.4,
+    releaseYear: 2009,
+  },
+  {
+    id: 53,
+    title: "No Game No Life",
+    imageUrl:
+      "https://i.pinimg.com/originals/73/ff/0e/73ff0e2b5a1619c244af0e73f74a0b45.gif",
+    description:
+      "Two genius siblings are transported to a world where everything is decided by games, using their intellect to conquer all challenges.",
+    genres: ["Fantasy", "Isekai", "Comedy"],
+    episodes: 12,
+    rating: 8.2,
+    releaseYear: 2014,
+  },
+  {
+    id: 54,
+    title: "Psycho-Pass",
+    imageUrl:
+      "https://i.pinimg.com/originals/7b/e3/42/7be34219e3421254e9b870b875f7743a.gif",
+    description:
+      "In a dystopian future, a young officer enforces justice in a society where a system measures people’s potential to commit crimes.",
+    genres: ["Sci-Fi", "Psychological", "Thriller"],
+    episodes: 41,
+    rating: 8.3,
+    releaseYear: 2012,
+  },
+  {
+    id: 55,
+    title: "Assassination Classroom",
+    imageUrl:
+      "https://i.pinimg.com/originals/5d/96/1b/5d961be9be1062aeab3ee0ed18b05222.gif",
+    description:
+      "A class of misfit students must assassinate their superpowered alien teacher before he destroys Earth, learning life lessons along the way.",
+    genres: ["Comedy", "Action", "School"],
+    episodes: 47,
+    rating: 8.1,
+    releaseYear: 2015,
+  },
+  {
+    id: 56,
+    title: "Horimiya",
+    imageUrl:
+      "https://i.pinimg.com/originals/a1/4c/c9/a14cc9ee1c965431d6ebd0530bc532d4.gif",
+    description:
+      "A popular high school girl falls for a seemingly average boy who hides his wild side, sparking a sweet and comedic romance.",
+    genres: ["Romance", "Comedy", "Slice of Life"],
+    episodes: 13,
+    rating: 8.1,
+    releaseYear: 2021,
+  },
+  {
+    id: 57,
+    title: "Hunter x Hunter (1999)",
+    imageUrl:
+      "https://i.pinimg.com/originals/23/e9/d6/23e9d674a8382d8e6b2068db345ecb7d.gif",
+    description:
+      "The original adaptation of a young boy’s journey to become a Hunter, facing challenges in a world of treasures and danger.",
+    genres: ["Adventure", "Fantasy", "Action"],
+    episodes: 62,
+    rating: 8.0,
+    releaseYear: 1999,
+  },
+  {
+    id: 58,
+    title: "My Neighbor Totoro",
+    imageUrl:
+      "https://i.pinimg.com/originals/ea/87/19/ea87191404a209c83613888054df3e50.gif",
+    description:
+      "Two young sisters befriend magical creatures in rural Japan, discovering wonder and comfort in a heartwarming tale of childhood.",
+    genres: ["Fantasy", "Slice of Life", "Family"],
+    episodes: 1,
+    rating: 8.6,
+    releaseYear: 1988,
+  },
+  {
+    id: 59,
+    title: "The Seven Deadly Sins",
+    imageUrl:
+      "https://i.pinimg.com/originals/ce/0c/fa/ce0cfae90221642cb692a426e2c636a7.gif",
+    description:
+      "A group of legendary knights, branded as traitors, reunite to save their kingdom from corruption and tyranny.",
+    genres: ["Action", "Fantasy", "Adventure"],
+    episodes: 100,
+    rating: 7.8,
+    releaseYear: 2014,
+  },
+  {
+    id: 60,
+    title: "Yuri!!! on Ice",
+    imageUrl:
+      "https://i.pinimg.com/originals/75/31/64/75316495b7d06f57c6d675314f8cddcb.gif",
+    description:
+      "A Japanese figure skater, down on his luck, finds inspiration and love under the guidance of a charismatic Russian champion.",
+    genres: ["Sports", "Romance", "Drama"],
+    episodes: 12,
+    rating: 8.0,
+    releaseYear: 2016,
+  },
+  {
+    id: 61,
+    title: "Dragon Ball Z",
+    imageUrl:
+      "https://i.pinimg.com/originals/bf/ba/e7/bfbae704d85960b6d40952cc5c45aa86.gif",
+    description:
+      "Goku and his allies defend Earth from powerful foes, uncovering their Saiyan heritage in epic battles of strength and spirit.",
+    genres: ["Action", "Adventure", "Shounen"],
+    episodes: 291,
+    rating: 8.3,
+    releaseYear: 1989,
+  },
+  {
+    id: 62,
+    title: "Ranking of Kings",
+    imageUrl:
+      "https://i.pinimg.com/originals/16/3c/1b/163c1b1623ed74446f0d9615cc86c470.gif",
+    description:
+      "A deaf and weak prince strives to become a great king, proving his worth through courage and kindness in a fantastical world.",
+    genres: ["Adventure", "Fantasy", "Drama"],
+    episodes: 23,
+    rating: 8.5,
+    releaseYear: 2021,
+  },
+  {
+    id: 63,
+    title: "Sailor Moon",
+    imageUrl:
+      "https://i.pinimg.com/originals/4e/9a/0a/4e9a0acf99e7d25da9536940437c69b8.gif",
+    description:
+      "A teenage girl transforms into a magical warrior to protect the world from evil forces, joined by her fellow Sailor Scouts.",
+    genres: ["Magical Girl", "Romance", "Fantasy"],
+    episodes: 200,
+    rating: 7.9,
+    releaseYear: 1992,
+  },
+  {
+    id: 64,
+    title: "Noragami",
+    imageUrl:
+      "https://i.pinimg.com/originals/e7/11/05/e711051f11f12088fe08d13ab7fd52b2.gif",
+    description:
+      "A minor god seeking fame takes on odd jobs for humans, teaming up with a girl whose soul slips out of her body.",
+    genres: ["Action", "Supernatural", "Comedy"],
+    episodes: 25,
+    rating: 7.9,
+    releaseYear: 2014,
+  },
+  {
+    id: 65,
+    title: "Howl’s Moving Castle",
+    imageUrl:
+      "https://i.pinimg.com/originals/90/aa/01/90aa01a5cac08969b135b364e7879428.gif",
+    description:
+      "A young woman, cursed to age prematurely, seeks refuge in a wizard’s magical moving castle, uncovering love and courage.",
+    genres: ["Fantasy", "Romance", "Adventure"],
+    episodes: 1,
+    rating: 8.7,
+    releaseYear: 2004,
+  },
+  {
+    id: 66,
+    title: "Spy x Family",
+    imageUrl:
+      "https://i.pinimg.com/originals/07/6a/87/076a8734229b127a985b1254b8507fe0.gif",
+    description:
+      "A spy, an assassin, and a telepathic girl form a fake family to complete a mission, leading to comedic and heartfelt moments.",
+    genres: ["Comedy", "Action", "Slice of Life"],
+    episodes: 25,
+    rating: 8.6,
+    releaseYear: 2022,
+  },
+  {
+    id: 67,
+    title: "Mushishi",
+    imageUrl:
+      "https://i.pinimg.com/originals/ca/09/bf/ca09bff6d813b577042fb1368af45303.gif",
+    description:
+      "A wandering traveler studies ethereal creatures called Mushi, which influence the world in subtle and mysterious ways.",
+    genres: ["Mystery", "Supernatural", "Slice of Life"],
+    episodes: 46,
+    rating: 8.5,
+    releaseYear: 2005,
+  },
+  {
+    id: 68,
+    title: "Attack on Titan: Final Season",
+    imageUrl:
+      "https://i.pinimg.com/originals/80/34/8c/80348cb8eecccc778ee72cab061adff7.gif",
+    description:
+      "The climactic end to the war between humans and Titans, as Eren’s actions spark a global conflict with devastating consequences.",
+    genres: ["Action", "Dark Fantasy", "Drama"],
+    episodes: 28,
+    rating: 9.0,
+    releaseYear: 2020,
+  },
+  {
+    id: 69,
+    title: "Soul Eater",
+    imageUrl:
+      "https://i.pinimg.com/originals/ec/ae/df/ecaedf2f3ee71041241b2545c1de5881.gif",
+    description:
+      "Students at a school for weapon meisters and their human weapons hunt evil souls to prevent a demon god’s resurrection.",
+    genres: ["Action", "Supernatural", "Comedy"],
+    episodes: 51,
+    rating: 7.8,
+    releaseYear: 2008,
+  },
+  {
+    id: 70,
+    title: "Natsume’s Book of Friends",
+    imageUrl:
+      "https://i.pinimg.com/originals/d3/15/97/d31597c26987d0088c6fb830e81ed69f.gif",
+    description:
+      "A boy who can see spirits inherits a book that binds yokai, working to free them while uncovering his grandmother’s legacy.",
+    genres: ["Supernatural", "Drama", "Slice of Life"],
+    episodes: 74,
+    rating: 8.1,
+    releaseYear: 2008,
+  },
+  {
+    id: 71,
+    title: "Death Parade",
+    imageUrl:
+      "https://i.pinimg.com/originals/51/2c/67/512c6799f3f82eb380fb1351fb848460.gif",
+    description:
+      "Souls are judged in an afterlife bar through deadly games that reveal their true nature, exploring morality and human emotions.",
+    genres: ["Psychological", "Drama", "Thriller"],
+    episodes: 12,
+    rating: 8.2,
+    releaseYear: 2015,
+  },
+  {
+    id: 72,
+    title: "Gurren Lagann",
+    imageUrl:
+      "https://i.pinimg.com/originals/31/c2/5b/31c25bd1912f1fea33aaefb3a223893f.gif",
+    description:
+      "Two friends pilot mechs to fight an oppressive regime, spiraling into an epic battle for the fate of the universe.",
+    genres: ["Mecha", "Action", "Adventure"],
+    episodes: 27,
+    rating: 8.6,
+    releaseYear: 2007,
+  },
+  {
+    id: 73,
+    title: "Kubo Won’t Let Me Be Invisible",
+    imageUrl:
+      "https://i.pinimg.com/originals/62/cf/a2/62cfa219c35e3af936d0639f7bac300b.gif",
+    description:
+      "A high school boy who often goes unnoticed finds his life changing when a cheerful classmate always sees him.",
+    genres: ["Comedy", "Romance", "Slice of Life"],
+    episodes: 12,
+    rating: 7.6,
+    releaseYear: 2023,
+  },
+  {
+    id: 74,
+    title: "Trigun",
+    imageUrl:
+      "https://i.pinimg.com/originals/59/7c/fb/597cfb0e42070e57fbe126ce61a103b0.gif",
+    description:
+      "A pacifist gunslinger with a massive bounty on his head roams a desert planet, balancing humor and tragedy.",
+    genres: ["Action", "Sci-Fi", "Western"],
+    episodes: 26,
+    rating: 8.2,
+    releaseYear: 1998,
+  },
+  {
+    id: 75,
+    title: "Barakamon",
+    imageUrl:
+      "https://i.pinimg.com/originals/df/b9/81/dfb981ec051fcca28adbe63aab402a4f.gif",
+    description:
+      "A calligrapher exiled to a rural island learns life lessons from quirky villagers, finding inspiration in simplicity.",
+    genres: ["Slice of Life", "Comedy", "Drama"],
+    episodes: 12,
+    rating: 8.0,
+    releaseYear: 2014,
+  },
+  {
+    id: 76,
+    title: "Paranoia Agent",
+    imageUrl:
+      "https://i.pinimg.com/originals/14/24/8d/14248ddb4d7b32485fe4d9652db0230d.gif",
+    description:
+      "A mysterious attacker on rollerblades terrorizes a city, revealing the psychological struggles of its victims.",
+    genres: ["Psychological", "Mystery", "Thriller"],
+    episodes: 13,
+    rating: 8.0,
+    releaseYear: 2004,
+  },
+  {
+    id: 77,
+    title: "Kaguya-sama: Love is War",
+    imageUrl:
+      "https://i.pinimg.com/originals/1e/af/3c/1eaf3c56a65b07a347ace235ce526641.gif",
+    description:
+      "Two genius students engage in a comedic battle of wits to make the other confess their love first.",
+    genres: ["Comedy", "Romance", "Psychological"],
+    episodes: 36,
+    rating: 8.5,
+    releaseYear: 2019,
+  },
+  {
+    id: 78,
+    title: "The Ancient Magus’ Bride",
+    imageUrl:
+      "https://i.pinimg.com/originals/ef/e0/29/efe029ccaa1a4e6948a029b59ee0a377.gif",
+    description:
+      "A young girl is sold to a non-human mage, becoming his apprentice and bride in a magical world of wonder and danger.",
+    genres: ["Fantasy", "Romance", "Supernatural"],
+    episodes: 24,
+    rating: 8.0,
+    releaseYear: 2017,
+  },
+  {
+    id: 79,
+    title: "Durarara!!",
+    imageUrl:
+      "https://i.pinimg.com/originals/9f/77/94/9f7794d79f64309117c265203ef460ce.gif",
+    description:
+      "A web of interconnected stories unfolds in Tokyo’s Ikebukuro district, involving a headless rider and urban legends.",
+    genres: ["Action", "Supernatural", "Mystery"],
+    episodes: 60,
+    rating: 8.1,
+    releaseYear: 2010,
+  },
+  {
+    id: 80,
+    title: "Violet Evergarden: The Movie",
+    imageUrl:
+      "https://i.pinimg.com/originals/4a/a8/fd/4aa8fd31d5f72f8e8e2ebb1798827297.gif",
+    description:
+      "Violet continues her journey as an Auto Memory Doll, uncovering a client’s past while confronting her own emotions.",
+    genres: ["Drama", "Romance", "Fantasy"],
+    episodes: 1,
+    rating: 8.5,
+    releaseYear: 2020,
+  },
+  {
+    id: 81,
+    title: "Great Teacher Onizuka",
+    imageUrl:
+      "https://i.pinimg.com/originals/48/b1/7f/48b17fa8d8051843d1f9996c60086144.gif",
+    description:
+      "A former delinquent becomes a teacher to reform a class of troubled students, using unorthodox methods and humor.",
+    genres: ["Comedy", "Drama", "School"],
+    episodes: 43,
+    rating: 8.5,
+    releaseYear: 1999,
+  },
+  {
+    id: 82,
+    title: "Hellsing",
+    imageUrl:
+      "https://i.pinimg.com/originals/2e/e7/8d/2ee78d3864ec1e28731e3cff66a7273d.gif",
+    description:
+      "A vampire hunter organization battles supernatural threats, led by the powerful vampire Alucard in a gory, action-packed tale.",
+    genres: ["Action", "Horror", "Supernatural"],
+    episodes: 13,
+    rating: 7.8,
+    releaseYear: 2001,
+  },
+  {
+    id: 83,
+    title: "Toradora!",
+    imageUrl:
+      "https://i.pinimg.com/originals/50/ef/36/50ef363e8b6fa8d52996428c0768d1e8.gif",
+    description:
+      "A kind-hearted delinquent and a fiery girl team up to help each other with their crushes, sparking an unexpected romance.",
+    genres: ["Romance", "Comedy", "Slice of Life"],
+    episodes: 25,
+    rating: 8.1,
+    releaseYear: 2008,
+  },
+  {
+    id: 84,
+    title: "Dorohedoro",
+    imageUrl:
+      "https://i.pinimg.com/originals/a4/e8/e7/a4e8e70b0394fc3cbd4dca167229d402.gif",
+    description:
+      "In a gritty world, a man with a reptile head searches for his past while battling sorcerers in a chaotic, violent city.",
+    genres: ["Action", "Horror", "Fantasy"],
+    episodes: 12,
+    rating: 8.1,
+    releaseYear: 2020,
+  },
+  {
+    id: 85,
+    title: "Cowboy Bebop: The Movie",
+    imageUrl:
+      "https://i.pinimg.com/originals/d0/d4/6c/d0d46c3e46e3a69444acde6b0e286c50.gif",
+    description:
+      "The Bebop crew hunts a terrorist with a deadly virus, blending action, noir, and their signature cool style.",
+    genres: ["Action", "Sci-Fi", "Space Western"],
+    episodes: 1,
+    rating: 7.9,
+    releaseYear: 2001,
+  },
+  {
+    id: 86,
+    title: "Shaman King",
+    imageUrl:
+      "https://i.pinimg.com/originals/1b/3b/8c/1b3b8c31117c0bb1149a523c65fea66b.gif",
+    description:
+      "A young shaman competes in a global tournament to become the Shaman King, connecting with spirits and allies.",
+    genres: ["Action", "Supernatural", "Adventure"],
+    episodes: 64,
+    rating: 7.8,
+    releaseYear: 2001,
+  },
+  {
+    id: 87,
+    title: "My Youth Romantic Comedy Is Wrong, as I Expected",
+    imageUrl:
+      "https://i.pinimg.com/originals/9a/ef/df/9aefdf1299d9370d7ba4ea772f5d4b7b.gif",
+    description:
+      "A cynical high schooler joins a service club, helping others while navigating complex relationships and personal growth.",
+    genres: ["Comedy", "Romance", "Slice of Life"],
+    episodes: 38,
+    rating: 8.0,
+    releaseYear: 2013,
+  },
+  {
+    id: 88,
+    title: "Steins;Gate 0",
+    imageUrl:
+      "https://i.pinimg.com/originals/c0/72/c8/c072c8bd32ac0937128e13f5e148f96d.gif",
+    description:
+      "In an alternate timeline, a scientist grapples with despair and time travel to prevent a tragic future.",
+    genres: ["Sci-Fi", "Thriller", "Drama"],
+    episodes: 23,
+    rating: 8.4,
+    releaseYear: 2018,
+  },
+  {
+    id: 89,
+    title: "Banana Fish",
+    imageUrl:
+      "https://i.pinimg.com/originals/36/48/5c/36485ca87a21a690f6507b72be8daa26.gif",
+    description:
+      "A young gang leader uncovers a dangerous conspiracy tied to a mysterious drug, forming a bond with a Japanese photographer.",
+    genres: ["Action", "Drama", "Crime"],
+    episodes: 24,
+    rating: 8.2,
+    releaseYear: 2018,
+  },
+  {
+    id: 90,
+    title: "Golden Kamuy",
+    imageUrl:
+      "https://i.pinimg.com/originals/a7/19/b9/a719b95d6e76b092a72eb2768f84b7d3.gif",
+    description:
+      "A war veteran and an Ainu girl hunt for hidden gold in Hokkaido, facing outlaws and harsh wilderness.",
+    genres: ["Adventure", "Historical", "Action"],
+    episodes: 36,
+    rating: 8.0,
+    releaseYear: 2018,
+  },
+  {
+    id: 91,
+    title: "Ergo Proxy",
+    imageUrl:
+      "https://i.pinimg.com/originals/e1/0e/21/e10e2117cf4d89cb49555a50181af532.gif",
+    description:
+      "In a dystopian city, a woman investigates mysterious androids and uncovers secrets about humanity’s existence.",
+    genres: ["Sci-Fi", "Psychological", "Mystery"],
+    episodes: 23,
+    rating: 7.9,
+    releaseYear: 2006,
+  },
+  {
+    id: 92,
+    title: "Weathering With You",
+    imageUrl:
+      "https://i.pinimg.com/originals/24/3d/8d/243d8db2006d038a3f7ec61443733b8b.gif",
+    description:
+      "A runaway teen meets a girl who can control the weather, leading to a magical romance amidst Tokyo’s storms.",
+    genres: ["Romance", "Fantasy", "Drama"],
+    episodes: 1,
+    rating: 8.0,
+    releaseYear: 2019,
+  },
+  {
+    id: 93,
+    title: "Blue Exorcist",
+    imageUrl:
+      "https://i.pinimg.com/originals/29/0e/57/290e57fd74238f667387235b1b0db9dc.gif",
+    description:
+      "The son of Satan trains to become an exorcist to fight demons and protect his friends, balancing his dual nature.",
+    genres: ["Action", "Supernatural", "Fantasy"],
+    episodes: 37,
+    rating: 7.7,
+    releaseYear: 2011,
+  },
+  {
+    id: 94,
+    title: "Claymore",
+    imageUrl:
+      "https://i.pinimg.com/originals/f3/39/fe/f339fe6c0cfe84847db2b4213f9ed73f.gif",
+    description:
+      "A female warrior with demonic powers hunts monstrous creatures in a medieval world, grappling with her own humanity.",
+    genres: ["Action", "Dark Fantasy", "Horror"],
+    episodes: 26,
+    rating: 7.8,
+    releaseYear: 2007,
+  },
+  {
+    id: 95,
+    title: "K-On!",
+    imageUrl:
+      "https://i.pinimg.com/originals/c4/bc/ab/c4bcab2e5b93e89e8f128e83feb50fed.gif",
+    description:
+      "A group of high school girls form a music club, bonding over tea, snacks, and lighthearted performances.",
+    genres: ["Comedy", "Music", "Slice of Life"],
+    episodes: 41,
+    rating: 7.8,
+    releaseYear: 2009,
+  },
+  {
+    id: 96,
+    title: "Beastars",
+    imageUrl:
+      "https://i.pinimg.com/originals/a8/56/7c/a8567cf466c301e0da7a330b87fa8845.gif",
+    description:
+      "In a world of anthropomorphic animals, a wolf grapples with his predatory instincts while solving a school murder mystery.",
+    genres: ["Drama", "Psychological", "Romance"],
+    episodes: 24,
+    rating: 7.9,
+    releaseYear: 2019,
+  },
+  {
+    id: 97,
+    title: "Samurai Champloo",
+    imageUrl:
+      "https://i.pinimg.com/originals/f1/0c/c8/f10cc838e5b73354caaeacdfcd7aee3c.gif",
+    description:
+      "A young woman teams up with two rogue samurai on a quest across Edo-era Japan, blending hip-hop and swordplay.",
+    genres: ["Action", "Adventure", "Historical"],
+    episodes: 26,
+    rating: 8.5,
+    releaseYear: 2004,
+  },
+  {
+    id: 98,
+    title: "Angel Beats!",
+    imageUrl:
+      "https://i.pinimg.com/originals/d7/6a/94/d76a94bdeb87b4b47d1876d86cfdcff2.gif",
+    description:
+      "Teens in an afterlife school rebel against their fate, forming bonds and uncovering the mysteries of their existence.",
+    genres: ["Drama", "Supernatural", "Comedy"],
+    episodes: 13,
+    rating: 8.1,
+    releaseYear: 2010,
+  },
+  {
+    id: 99,
+    title: "Miss Kobayashi’s Dragon Maid",
+    imageUrl:
+      "https://i.pinimg.com/originals/e4/88/c1/e488c15dcdeccc03e7cfdc2758108550.gif",
+    description:
+      "An office worker’s life changes when a dragon transforms into a maid and moves in, leading to comedic chaos.",
+    genres: ["Comedy", "Fantasy", "Slice of Life"],
+    episodes: 25,
+    rating: 7.8,
+    releaseYear: 2017,
+  },
+  {
+    id: 100,
+    title: "Vinland Saga Season 2",
+    imageUrl:
+      "https://i.pinimg.com/originals/4d/ae/01/4dae01ef6e6ebdf5cd4bda56a3ab315c.gif",
+    description:
+      "Thorfinn’s journey continues as he seeks peace after a life of violence, exploring redemption in a harsh Viking world.",
+    genres: ["Action", "Adventure", "Historical"],
+    episodes: 24,
+    rating: 8.7,
+    releaseYear: 2023,
+  },
+  {
+    id: 101,
+    title: "Golden Time",
+    imageUrl:
+      "https://i.pinimg.com/originals/9a/dc/29/9adc29cd75e6f101aab784e987220e70.gif",
+    description:
+      "A college freshman with amnesia navigates love, friendship, and self-discovery, finding warmth and connection with a spirited classmate in a heartfelt romantic journey.",
+    genres: ["Romance", "Comedy", "Slice of Life"],
+    episodes: 24,
+    rating: 7.8,
+    releaseYear: 2013,
   },
 ];
 
