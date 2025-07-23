@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
@@ -27,8 +26,8 @@ export const CtaSection = () => {
           Ready to Start Your Anime Journey?
         </h2>
         <p className="text-lg mb-8 max-w-2xl mx-auto">
-          Sign in now and start organizing your anime watchlist today. It's
-          free and easy to use!
+          Sign in now and start organizing your anime watchlist today. It's free
+          and easy to use!
         </p>
         {currentUser ? (
           <Button

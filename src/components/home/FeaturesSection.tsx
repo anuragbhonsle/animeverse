@@ -1,15 +1,19 @@
-
 import React from "react";
 import { FeatureCard } from "./FeatureCard";
 
 export const FeaturesSection = () => {
   return (
-    <section className="py-16 md:py-24">
-      <div className="container px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-          Manage Your Anime Experience
+    <section className="w-full py-24 bg-background border-t border-border">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <h2 className="text-4xl md:text-4xl font-bold text-center mb-12">
+          Manage Your{" "}
+          <span className="bg-gradient-to-r from-anime-light-purple to-anime-purple text-transparent bg-clip-text">
+            Anime
+          </span>{" "}
+          Experience
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Card 1 */}
           <FeatureCard
             title="Organize"

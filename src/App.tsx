@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,15 +17,19 @@ const queryClient = new QueryClient();
 // Protected route component
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { currentUser, loading } = useAuth();
-  
+
   if (loading) {
-    return <div className="flex min-h-screen items-center justify-center">Loading...</div>;
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        Loading...
+      </div>
+    );
   }
-  
+
   if (!currentUser) {
     return <Navigate to="/auth" />;
   }
-  
+
   return <>{children}</>;
 };
 
@@ -35,11 +38,14 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/browse" element={<Browse />} />
-      <Route path="/dashboard" element={
-        <ProtectedRoute>
-          <Dashboard />
-        </ProtectedRoute>
-      } />
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
       <Route path="/auth" element={<Auth />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
@@ -50,8 +56,10 @@ const App = () => {
   // On initial mount, set up theme from localStorage
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
     // Set initial theme class on document
     if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
       document.documentElement.classList.add("dark");

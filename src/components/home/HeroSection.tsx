@@ -8,20 +8,9 @@ export const HeroSection = () => {
   const { currentUser } = useAuth();
 
   return (
-    <section className="relative bg-gradient-to-b from-background to-muted min-h-[91vh] flex items-center py-24 md:py-0 overflow-hidden">
-      {/* Manga Panel Background */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-70"
-        style={{
-          backgroundImage: `url("/cover.jpeg")`,
-        }}
-        aria-hidden="true"
-      />
+    <section className="relative bg-background dark:bg-background min-h-[91vh] flex items-center py-24 md:py-0 overflow-hidden">
+      {/* 🧼 Clean section, no background image or gradient */}
 
-      {/* Content Overlay with Dark Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/85 to-muted/90 dark:from-background/90 dark:to-muted/95 z-0"></div>
-
-      {/* Content */}
       <div className="container px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
