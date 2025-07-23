@@ -13,17 +13,24 @@ export const HeroSection = () => {
 
       <div className="container px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-raleway font-extrabold leading-tight tracking-tight">
             Track Your Anime{" "}
             <span className="bg-gradient-to-r from-anime-tertiary to-anime-primary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent">
               Journey
             </span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Effortlessly organize, track, and discover anime with your
-            personalized watchlist. Stay on top of what you've watched and
-            easily plan what to watch next
+
+          <p
+            className="text-lg text-muted-foreground max-w-2xl mx-auto typewriter"
+            style={{ fontFamily: "Raleway, sans-serif" }}
+          >
+            Effortlessly track, manage, and explore your{" "}
+            <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+              anime
+            </span>{" "}
+            world — all in one place.
           </p>
+
           <div className="flex flex-wrap justify-center gap-4">
             {currentUser ? (
               <Button asChild size="lg" className="btn-glow group">

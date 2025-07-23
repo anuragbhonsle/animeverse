@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -54,13 +53,13 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         anime: {
-          primary: "#555555",         // Light mode: Gray
-          secondary: "#333333",       // Light mode: Dark gray
-          tertiary: "#7b68ee",        // Light/Dark mode: Purple accent
-          dark: "#121212",            // Light/Dark mode: Very dark, almost black
-          purple: "#8B5CF6",          // Dark mode: Purple primary 
-          "deep-purple": "#6D28D9",   // Dark mode: Deep purple secondary
-          "light-purple": "#A78BFA",  // Dark mode: Light purple
+          primary: "#555555", // Light mode: Gray
+          secondary: "#333333", // Light mode: Dark gray
+          tertiary: "#7b68ee", // Light/Dark mode: Purple accent
+          dark: "#121212", // Light/Dark mode: Very dark, almost black
+          purple: "#8B5CF6", // Dark mode: Purple primary
+          "deep-purple": "#6D28D9", // Dark mode: Deep purple secondary
+          "light-purple": "#A78BFA", // Dark mode: Light purple
         },
       },
       borderRadius: {
@@ -108,8 +107,17 @@ export default {
         "pulse-slow": "pulse-slow 3s ease-in-out infinite",
       },
       boxShadow: {
-        "glow": "0 0 15px rgba(139, 92, 246, 0.5)",
+        glow: "0 0 15px rgba(139, 92, 246, 0.5)",
         "glow-sm": "0 0 5px rgba(139, 92, 246, 0.3)",
+      },
+      // tailwind.config.js
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+            raleway: ["Raleway", "sans-serif"],
+          },
+        },
       },
     },
   },
