@@ -11,7 +11,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <Link to="/" className="font-bold text-xl text-foreground">
-              <span className="bg-gradient-to-r from-anime-tertiary to-anime-primary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-anime-tertiary to-anime-secondary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent">
                 AnimeVerse
               </span>
             </Link>
@@ -73,7 +73,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 pt-4 border-t border-border/50 text-center">
+        <div className="mt-2 pt-2 text-center">
           <p className="text-muted-foreground text-sm">
             © {currentYear} AnimeVerse. All rights reserved.
           </p>

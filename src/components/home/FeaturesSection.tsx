@@ -3,9 +3,12 @@ import { FeatureCard } from "./FeatureCard";
 
 export const FeaturesSection = () => {
   return (
-    <section className="w-full py-24 bg-background border-t border-border">
+    <section className="w-full py-24 bg-background border-t border-border bg-secondary/20 dark:bg-secondary/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <h2 className="text-4xl md:text-4xl font-bold text-center mb-12">
+        <h2
+          className="text-4xl md:text-4xl font-bold text-center mb-12"
+          style={{ fontFamily: "'Raleway', sans-serif" }}
+        >
           Manage Your{" "}
           <span className="bg-gradient-to-r from-anime-light-purple to-anime-purple text-transparent bg-clip-text">
             Anime

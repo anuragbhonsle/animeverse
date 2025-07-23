@@ -53,13 +53,13 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         anime: {
-          primary: "#555555", // Light mode: Gray
-          secondary: "#333333", // Light mode: Dark gray
-          tertiary: "#7b68ee", // Light/Dark mode: Purple accent
-          dark: "#121212", // Light/Dark mode: Very dark, almost black
-          purple: "#8B5CF6", // Dark mode: Purple primary
-          "deep-purple": "#6D28D9", // Dark mode: Deep purple secondary
-          "light-purple": "#A78BFA", // Dark mode: Light purple
+          primary: "#ffffff", // Light mode background
+          secondary: "#6D28D9", // Accent purple
+          tertiary: "#7b68ee", // Lighter accent
+          dark: "#000000", // Dark mode background
+          purple: "#8658f0", // Dark mode purple
+          "deep-purple": "#6D28D9", // Deeper purple
+          "light-purple": "#A78BFA", // Light purple highlight
         },
       },
       borderRadius: {

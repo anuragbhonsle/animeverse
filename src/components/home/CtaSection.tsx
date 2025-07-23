@@ -8,7 +8,10 @@ export const CtaSection = () => {
   const { currentUser } = useAuth();
 
   return (
-    <section className="relative bg-gradient-to-r from-anime-dark to-anime-primary/90 dark:from-anime-deep-purple/90 dark:to-anime-purple/90 text-white py-16 overflow-hidden">
+    <section
+      className="relative bg-secondary/20 dark:bg-secondary/10 text-black dark:text-white py-16 overflow-hidden border-t border-border
+"
+    >
       {/* Manga Panel Background */}
       <div
         className="absolute inset-0 z-0 opacity-10 dark:opacity-15"
@@ -22,19 +25,26 @@ export const CtaSection = () => {
       />
 
       <div className="container px-4 text-center relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-pulse-slow">
+        <h2
+          className="text-3xl md:text-4xl font-bold mb-6 animate-pulse-slow"
+          style={{ fontFamily: "'Raleway', sans-serif" }}
+        >
           Ready to Start Your Anime Journey?
         </h2>
-        <p className="text-lg mb-8 max-w-2xl mx-auto">
-          Sign in now and start organizing your anime watchlist today. It's free
-          and easy to use!
+        <p
+          className="text-base mb-8 mx-auto max-w-2xl text-center whitespace-nowrap sm:whitespace-normal"
+          style={{ fontFamily: "'Poppins', sans-serif" }}
+        >
+          Sign in now and start organizing your anime watchlist. It’s free and
+          easy to use!
         </p>
+
         {currentUser ? (
           <Button
             asChild
             size="lg"
             variant="secondary"
-            className="dark:bg-white/20 dark:text-white dark:hover:bg-white/30 dark:shadow-glow-sm"
+            className="bg-gradient-to-r from-anime-light-purple to-anime-purple text-white hover:from-anime-purple hover:to-anime-light-purple transition-colors"
           >
             <Link to="/dashboard" className="flex items-center group">
               Go to Your Dashboard
@@ -46,7 +56,7 @@ export const CtaSection = () => {
             asChild
             size="lg"
             variant="secondary"
-            className="dark:bg-white/20 dark:text-white dark:hover:bg-white/30 dark:shadow-glow-sm"
+            className="bg-gradient-to-r from-anime-light-purple to-anime-purple text-white hover:from-anime-purple hover:to-anime-light-purple transition-colors"
           >
             <Link to="/auth">Sign In</Link>
           </Button>

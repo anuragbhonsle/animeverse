@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
@@ -29,29 +28,44 @@ export const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/70 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <span className="font-bold text-2xl bg-gradient-to-r from-anime-tertiary to-anime-primary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent">
+          <span
+            style={{ fontFamily: "Raleway, sans-serif" }}
+            className="font-bold text-2xl bg-gradient-to-r from-anime-tertiary to-anime-secondary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent"
+          >
             AnimeVerse
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link 
-            to="/" 
-            className={`font-medium transition-colors nav-link ${isActive("/") ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+          <Link
+            to="/"
+            className={`font-medium transition-colors nav-link ${
+              isActive("/")
+                ? "text-primary"
+                : "text-foreground/80 hover:text-primary"
+            }`}
           >
             Home
           </Link>
-          <Link 
-            to="/browse" 
-            className={`font-medium transition-colors nav-link ${isActive("/browse") ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+          <Link
+            to="/browse"
+            className={`font-medium transition-colors nav-link ${
+              isActive("/browse")
+                ? "text-primary"
+                : "text-foreground/80 hover:text-primary"
+            }`}
           >
             Browse
           </Link>
           {currentUser && (
-            <Link 
-              to="/dashboard" 
-              className={`font-medium transition-colors nav-link ${isActive("/dashboard") ? "text-primary" : "text-foreground/80 hover:text-primary"}`}
+            <Link
+              to="/dashboard"
+              className={`font-medium transition-colors nav-link ${
+                isActive("/dashboard")
+                  ? "text-primary"
+                  : "text-foreground/80 hover:text-primary"
+              }`}
             >
               Dashboard
             </Link>
@@ -68,18 +82,29 @@ export const Navbar = () => {
               {currentUser ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="relative rounded-full hover:bg-primary/10">
+                    <Button
+                      variant="ghost"
+                      className="relative rounded-full hover:bg-primary/10"
+                    >
                       <User className="w-5 h-5" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-56 dark:bg-card/95 dark:backdrop-blur-sm">
+                  <DropdownMenuContent
+                    align="end"
+                    className="w-56 dark:bg-card/95 dark:backdrop-blur-sm"
+                  >
                     <div className="px-2 py-1.5 text-sm font-medium border-b border-border mb-1">
                       {currentUser.email}
                     </div>
                     <DropdownMenuItem asChild>
-                      <Link to="/dashboard" className="cursor-pointer">Dashboard</Link>
+                      <Link to="/dashboard" className="cursor-pointer">
+                        Dashboard
+                      </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem onClick={signOut} className="cursor-pointer text-destructive hover:text-destructive focus:text-destructive">
+                    <DropdownMenuItem
+                      onClick={signOut}
+                      className="cursor-pointer text-destructive hover:text-destructive focus:text-destructive"
+                    >
                       <LogOut className="mr-2 h-4 w-4" />
                       <span>Sign Out</span>
                     </DropdownMenuItem>
@@ -95,7 +120,12 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button */}
           {isMobile && (
-            <Button variant="ghost" size="icon" onClick={toggleMenu} className="md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleMenu}
+              className="md:hidden"
+            >
               <Menu className="h-6 w-6" />
             </Button>
           )}
@@ -106,24 +136,34 @@ export const Navbar = () => {
       {isMobile && isMenuOpen && (
         <div className="md:hidden px-4 py-3 bg-background/95 dark:bg-background/90 backdrop-blur-md border-t border-border animate-fade-in">
           <div className="flex flex-col space-y-3">
-            <Link 
-              to="/" 
-              className={`px-3 py-2 rounded-md transition-colors ${isActive("/") ? "bg-primary/10 text-primary" : "hover:bg-muted"}`}
+            <Link
+              to="/"
+              className={`px-3 py-2 rounded-md transition-colors ${
+                isActive("/") ? "bg-primary/10 text-primary" : "hover:bg-muted"
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
-            <Link 
-              to="/browse" 
-              className={`px-3 py-2 rounded-md transition-colors ${isActive("/browse") ? "bg-primary/10 text-primary" : "hover:bg-muted"}`}
+            <Link
+              to="/browse"
+              className={`px-3 py-2 rounded-md transition-colors ${
+                isActive("/browse")
+                  ? "bg-primary/10 text-primary"
+                  : "hover:bg-muted"
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Browse
             </Link>
             {currentUser && (
-              <Link 
-                to="/dashboard" 
-                className={`px-3 py-2 rounded-md transition-colors ${isActive("/dashboard") ? "bg-primary/10 text-primary" : "hover:bg-muted"}`}
+              <Link
+                to="/dashboard"
+                className={`px-3 py-2 rounded-md transition-colors ${
+                  isActive("/dashboard")
+                    ? "bg-primary/10 text-primary"
+                    : "hover:bg-muted"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Dashboard

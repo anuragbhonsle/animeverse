@@ -8,14 +8,20 @@ export const HeroSection = () => {
   const { currentUser } = useAuth();
 
   return (
-    <section className="relative bg-background dark:bg-background min-h-[91vh] flex items-center py-24 md:py-0 overflow-hidden">
+    <section className="relative bg-background dark:bg-background min-h-[91vh] flex items-center py-24 md:py-0 overflow-hidden bg-secondary/20 dark:bg-secondary/10">
       {/* 🧼 Clean section, no background image or gradient */}
 
       <div className="container px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-raleway font-extrabold leading-tight tracking-tight">
+          <h1
+            style={{ fontFamily: "Poppins, sans-serif" }}
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight"
+          >
             Track Your Anime{" "}
-            <span className="bg-gradient-to-r from-anime-tertiary to-anime-primary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent">
+            <span
+              style={{ fontFamily: "Raleway, sans-serif" }}
+              className="bg-gradient-to-r from-anime-tertiary to-anime-secondary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent"
+            >
               Journey
             </span>
           </h1>
@@ -40,10 +46,14 @@ export const HeroSection = () => {
                 </Link>
               </Button>
             ) : (
-              <Button asChild size="lg" className="btn-glow">
-                <Link to="/auth">Sign In</Link>
+              <Button asChild size="lg" className="btn-glow group">
+                <Link to="/auth" className="flex items-center">
+                  Sign In
+                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             )}
+
             <Button
               asChild
               variant="outline"
