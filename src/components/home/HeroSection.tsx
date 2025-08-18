@@ -11,56 +11,61 @@ export const HeroSection = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      // Normalized values between -1 and 1
+    const handleMouseMove = (e: MouseEvent) => {
       const x = (e.clientX / window.innerWidth) * 2 - 1;
       const y = (e.clientY / window.innerHeight) * 2 - 1;
       setMousePos({ x, y });
     };
-
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
-    <section className="relative min-h-[91vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-secondary/10 via-background to-secondary/20 dark:from-secondary/10 dark:via-background dark:to-secondary/5">
-      {/* Floating background elements with parallax */}
-      <div
-        className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-anime-purple/20 dark:bg-anime-purple/10 rounded-full blur-3xl animate-pulse-slow transition-transform duration-300"
-        style={{
-          transform: `translate(${mousePos.x * 20}px, ${mousePos.y * 20}px)`,
-        }}
-      ></div>
-      <div
-        className="absolute -bottom-40 -left-40 w-[450px] h-[450px] bg-anime-tertiary/20 dark:bg-anime-tertiary/10 rounded-full blur-3xl animate-pulse-slow delay-2000 transition-transform duration-300"
-        style={{
-          transform: `translate(${mousePos.x * -15}px, ${mousePos.y * -15}px)`,
-        }}
-      ></div>
+    <section
+      className="relative min-h-[91vh] flex items-center justify-center overflow-hidden
+      bg-white dark:bg-black"
+    >
+      {/* Background GIF */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'url("https://i.pinimg.com/originals/b0/a5/40/b0a5403e757bd83e02131c4d2e82c351.gif")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "brightness(0.9) contrast(1.3) blur(1px) saturate(120%)",
+            opacity: 0.9,
+          }}
+          aria-hidden="true"
+        />
+      </div>
 
       {/* Content */}
       <div className="container px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in">
+          {/* Heading */}
           <h1
             style={{ fontFamily: "Poppins, sans-serif" }}
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white/90"
           >
             Track Your Anime{" "}
             <span
               style={{ fontFamily: "Raleway, sans-serif" }}
-              className="bg-gradient-to-r from-anime-tertiary to-anime-secondary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent animate-gradient-x"
+              className="bg-gradient-to-r from-anime-light-purple to-anime-purple bg-clip-text text-transparent animate-gradient-x font-extrabold"
             >
               Journey
             </span>
           </h1>
 
+          {/* Paragraph */}
           <p
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up"
             style={{ fontFamily: "Raleway, sans-serif" }}
+            className="text-lg md:text-xl max-w-2xl mx-auto text-white/90  "
           >
             Effortlessly track, manage, and explore your{" "}
             <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent font-semibold">
-              anime
+              Anime
             </span>{" "}
             world — all in one place. Your next favorite show is just a click
             away.
@@ -72,33 +77,40 @@ export const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="btn-glow group hover:scale-105 transition-transform duration-300"
+                className="group px-10 py-4 rounded-3xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white font-bold shadow-xl transition-all duration-500 ease-out
+                 hover:scale-105 hover:shadow-2xl animate-gradient-x"
               >
-                <Link to="/dashboard" className="flex items-center">
+                <Link to="/dashboard" className="flex items-center gap-2">
                   Go to Dashboard
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
                 </Link>
               </Button>
             ) : (
               <Button
                 asChild
                 size="lg"
-                className="btn-glow group hover:scale-105 transition-transform duration-300"
+                className="group px-10 py-4 rounded-3xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white font-bold shadow-xl transition-all duration-500 ease-out
+                 hover:scale-105 hover:shadow-2xl animate-gradient-x"
               >
-                <Link to="/auth" className="flex items-center">
+                <Link to="/auth" className="flex items-center gap-2">
                   Sign In
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
                 </Link>
               </Button>
             )}
 
             <Button
               asChild
-              variant="outline"
               size="lg"
-              className="dark:border-white/20 dark:hover:border-white/30 hover:scale-105 transition-transform duration-300"
+              className="group px-10 py-4 rounded-3xl bg-black/95 text-white font-bold shadow-xl transition-all duration-500 ease-out
+               hover:scale-105 hover:shadow-2xl hover:bg-black/80"
             >
-              <Link to="/browse">Browse Anime</Link>
+              <Link
+                to="/browse"
+                className="flex items-center justify-center gap-2"
+              >
+                Browse Anime
+              </Link>
             </Button>
           </div>
         </div>

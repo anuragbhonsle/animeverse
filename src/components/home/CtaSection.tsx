@@ -16,7 +16,7 @@ export const CtaSection = () => {
       <div
         className="absolute inset-0 z-0 opacity-10 dark:opacity-15"
         style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1591459034470-d1e05d7e5ce4?q=80&w=1470&auto=format&fit=crop")`,
+          backgroundImage: `url("")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "grayscale(100%) blur(2px)",

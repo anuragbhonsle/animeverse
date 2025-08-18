@@ -20,18 +20,14 @@ export const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="sticky top-0 z-50 bg-background/70 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        {/* Logo */}
         <Link to="/" className="flex items-center">
-          <span
-            style={{ fontFamily: "Raleway, sans-serif" }}
-            className="font-bold text-2xl bg-gradient-to-r from-anime-tertiary to-anime-secondary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent"
-          >
+          <span className="font-bold text-2xl bg-gradient-to-r from-anime-tertiary to-anime-secondary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent">
             AnimeVerse
           </span>
         </Link>
@@ -42,8 +38,8 @@ export const Navbar = () => {
             to="/"
             className={`font-medium transition-colors nav-link ${
               isActive("/")
-                ? "text-primary"
-                : "text-foreground/80 hover:text-primary"
+                ? "text-purple-600 dark:text-anime-light-purple"
+                : "text-foreground/80 hover:text-purple-600 dark:hover:text-anime-light-purple"
             }`}
           >
             Home
@@ -52,8 +48,8 @@ export const Navbar = () => {
             to="/browse"
             className={`font-medium transition-colors nav-link ${
               isActive("/browse")
-                ? "text-primary"
-                : "text-foreground/80 hover:text-primary"
+                ? "text-purple-600 dark:text-anime-light-purple"
+                : "text-foreground/80 hover:text-purple-600 dark:hover:text-anime-light-purple"
             }`}
           >
             Browse
@@ -63,8 +59,8 @@ export const Navbar = () => {
               to="/dashboard"
               className={`font-medium transition-colors nav-link ${
                 isActive("/dashboard")
-                  ? "text-primary"
-                  : "text-foreground/80 hover:text-primary"
+                  ? "text-purple-600 dark:text-anime-light-purple"
+                  : "text-foreground/80 hover:text-purple-600 dark:hover:text-anime-light-purple"
               }`}
             >
               Dashboard
@@ -139,7 +135,9 @@ export const Navbar = () => {
             <Link
               to="/"
               className={`px-3 py-2 rounded-md transition-colors ${
-                isActive("/") ? "bg-primary/10 text-primary" : "hover:bg-muted"
+                isActive("/")
+                  ? "bg-purple-100 dark:bg-anime-light-purple/20 text-purple-600 dark:text-anime-light-purple"
+                  : "hover:bg-muted text-foreground/80 dark:text-foreground"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -149,8 +147,8 @@ export const Navbar = () => {
               to="/browse"
               className={`px-3 py-2 rounded-md transition-colors ${
                 isActive("/browse")
-                  ? "bg-primary/10 text-primary"
-                  : "hover:bg-muted"
+                  ? "bg-purple-100 dark:bg-anime-light-purple/20 text-purple-600 dark:text-anime-light-purple"
+                  : "hover:bg-muted text-foreground/80 dark:text-foreground"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -161,15 +159,17 @@ export const Navbar = () => {
                 to="/dashboard"
                 className={`px-3 py-2 rounded-md transition-colors ${
                   isActive("/dashboard")
-                    ? "bg-primary/10 text-primary"
-                    : "hover:bg-muted"
+                    ? "bg-purple-100 dark:bg-anime-light-purple/20 text-purple-600 dark:text-anime-light-purple"
+                    : "hover:bg-muted text-foreground/80 dark:text-foreground"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Dashboard
               </Link>
             )}
+
             <div className="border-t border-border my-2"></div>
+
             {currentUser ? (
               <>
                 <div className="px-3 py-2 flex items-center space-x-2">
