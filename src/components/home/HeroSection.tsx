@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const HeroSection = () => {
   const { currentUser } = useAuth();
@@ -22,7 +23,7 @@ export const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-[91vh] flex items-center justify-center overflow-hidden
+      className="relative min-h-[93vh] flex items-center justify-center overflow-hidden
       bg-white dark:bg-black"
     >
       {/* Background GIF */}
@@ -34,8 +35,8 @@ export const HeroSection = () => {
               'url("https://i.pinimg.com/originals/b0/a5/40/b0a5403e757bd83e02131c4d2e82c351.gif")',
             backgroundSize: "cover",
             backgroundPosition: "center",
-            filter: "brightness(0.9) contrast(1.3) blur(1px) saturate(120%)",
-            opacity: 0.9,
+            filter: "brightness(0.8) contrast(1.3) blur(1px) saturate(130%)",
+            opacity: 1,
           }}
           aria-hidden="true"
         />
@@ -58,18 +59,19 @@ export const HeroSection = () => {
             </span>
           </h1>
 
-          {/* Paragraph */}
-          <p
-            style={{ fontFamily: "Raleway, sans-serif" }}
-            className="text-lg md:text-xl max-w-2xl mx-auto text-white/90  "
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+            className="text-lg md:text-xl max-w-2xl mx-auto text-white/90 "
           >
             Effortlessly track, manage, and explore your{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent font-semibold">
+            <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent font-bold">
               Anime
             </span>{" "}
             world — all in one place. Your next favorite show is just a click
             away.
-          </p>
+          </motion.p>
 
           {/* Buttons */}
           <div className="flex flex-wrap justify-center gap-4 animate-slide-up delay-200">

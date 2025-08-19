@@ -107,7 +107,11 @@ export const Navbar = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <Button asChild variant="default" className="btn-glow">
+                <Button
+                  asChild
+                  variant="default"
+                  className="btn-glow rounded-xl" // bigger radius
+                >
                   <Link to="/auth">Sign In</Link>
                 </Button>
               )}

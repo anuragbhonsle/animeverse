@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Twitter } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -51,13 +51,22 @@ export const Footer = () => {
               </h4>
               <div className="flex flex-col space-y-2">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/anuragbhonsle/animeverse"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center"
                 >
                   <Github className="h-3.5 w-3.5 mr-1.5" />
                   GitHub
+                </a>
+                <a
+                  href="https://x.com/Anuraaaag7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center"
+                >
+                  <Twitter className="h-3.5 w-3.5 mr-1.5" />
+                  Twitter
                 </a>
                 <a
                   href="https://myanimelist.net"
