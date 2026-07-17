@@ -4,7 +4,7 @@ import { FeatureCard } from "./FeatureCard";
 
 export const FeaturesSection = () => {
   return (
-    <section className="w-full py-16 bg-background border-t border-border bg-secondary/20 dark:bg-secondary/10">
+    <section className="w-full py-16 border-t border-border bg-secondary">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Heading */}
         <motion.h2
@@ -43,9 +43,9 @@ export const FeaturesSection = () => {
               hidden: { opacity: 0, y: 30 },
               show: { opacity: 1, y: 0 },
             }}
-            whileHover={{ scale: 1.05, y: -5 }}
+            whileHover={{ scale: 1.05, y: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 18 }}
-            className="rounded-2xl p-6 bg-card/80 backdrop-blur-md border border-border hover:border-purple-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-purple-500/20"
+            className="rounded-2xl p-6 bg-secondary backdrop-blur-md border border-border hover:border-purple-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-purple-500/20"
           >
             <FeatureCard
               title="Organize"
@@ -75,9 +75,9 @@ export const FeaturesSection = () => {
               hidden: { opacity: 0, y: 30 },
               show: { opacity: 1, y: 0 },
             }}
-            whileHover={{ scale: 1.05, y: -5 }}
+            whileHover={{ scale: 1.05, y: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 18 }}
-            className="rounded-2xl p-6 bg-card/80 backdrop-blur-md border border-border hover:border-purple-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-purple-500/20"
+            className="rounded-2xl p-6 bg-secondary backdrop-blur-md border border-border hover:border-purple-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-purple-500/20"
           >
             <FeatureCard
               title="Track"
@@ -107,9 +107,9 @@ export const FeaturesSection = () => {
               hidden: { opacity: 0, y: 30 },
               show: { opacity: 1, y: 0 },
             }}
-            whileHover={{ scale: 1.05, y: -5 }}
+            whileHover={{ scale: 1.05, y: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 18 }}
-            className="rounded-2xl p-6 bg-card/80 backdrop-blur-md border border-border hover:border-purple-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-purple-500/20"
+            className="rounded-2xl p-6 bg-secondary backdrop-blur-md border border-border hover:border-purple-400/50 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-purple-500/20"
           >
             <FeatureCard
               title="Discover"

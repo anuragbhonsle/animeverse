@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
@@ -13,7 +12,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Dashboard = () => {
   const { currentUser, loading: authLoading } = useAuth();
-  const { userWatchlist, loading: watchlistLoading, updateAnimeStatus, updateAnimeProgress } = useWatchlist();
+  const {
+    userWatchlist,
+    loading: watchlistLoading,
+    updateAnimeStatus,
+    updateAnimeProgress,
+  } = useWatchlist();
   const [selectedAnime, setSelectedAnime] = useState<Anime | null>(null);
 
   // If not logged in and not loading, redirect to home page
@@ -35,14 +39,14 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-secondary">
       <Navbar />
 
-      <main className="flex-grow container px-4 py-8">
+      <main className="flex-grow container px-4 py-8 bg-secondary">
         <div className="mb-8">
           <h1 className="text-3xl font-bold">Dashboard</h1>
           <p className="text-muted-foreground">
-            Welcome back, {currentUser?.email?.split('@')[0] || "Anime Fan"}!
+            Welcome back, {currentUser?.email?.split("@")[0] || "Anime Fan"}!
           </p>
         </div>
 
@@ -51,7 +55,7 @@ const Dashboard = () => {
             <TabsTrigger value="watchlist">My Watchlist</TabsTrigger>
             <TabsTrigger value="stats">Statistics</TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="watchlist">
             <WatchlistStatus
               userWatchlist={userWatchlist}
@@ -60,7 +64,7 @@ const Dashboard = () => {
               onAnimeClick={(anime) => setSelectedAnime(anime)}
             />
           </TabsContent>
-          
+
           <TabsContent value="stats">
             <Statistics userWatchlist={userWatchlist} animeData={animeData} />
           </TabsContent>
@@ -69,7 +73,9 @@ const Dashboard = () => {
         {/* Anime Detail Modal */}
         <AnimeDetail
           anime={selectedAnime}
-          userEntry={selectedAnime ? userWatchlist[selectedAnime.id] : undefined}
+          userEntry={
+            selectedAnime ? userWatchlist[selectedAnime.id] : undefined
+          }
           onClose={() => setSelectedAnime(null)}
           onStatusChange={updateAnimeStatus}
           onProgressUpdate={updateAnimeProgress}

@@ -4,86 +4,47 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 5% 64.9%;
-
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5% 64.9%;
-
-    --radius: 0.5rem;
-
-    /* Custom anime colors */
-    --anime-primary: #4361ee;
-    --anime-secondary: #3a0ca3;
-    --anime-tertiary: #4895ef;
-    --anime-dark: #0f172a;
-    --anime-light: #f8fafc;
-    --anime-purple: #8b5cf6;
-    --anime-light-purple: #c4b5fd;
-    --anime-deep-purple: #4c1d95;
-  }
-
-  .dark {
     --background: 240 10% 4%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 6%;
+    --card: 240 10% 4.5%;
     --card-foreground: 0 0% 98%;
 
     --popover: 240 10% 6%;
     --popover-foreground: 0 0% 98%;
 
-    /* Change primary to purple in dark mode */
-    --primary: 267 83% 60%;
+    /* Darker Purple */
+    --primary: 265 72% 48%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 5% 15%;
+    --secondary: 0 0% 0%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 5% 15%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 267 83% 60%;
+    /* Darker Violet */
+    --accent: 270 68% 44%;
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 5% 20%;
     --input: 240 5% 20%;
-    --ring: 267 83% 60%;
+    --ring: 265 72% 48%;
 
-    /* Custom anime colors for dark mode */
-    --anime-primary: #8b5cf6;
-    --anime-secondary: #7c3aed;
-    --anime-tertiary: #a78bfa;
-    --anime-dark: #1e1b4b;
+    --radius: 0.5rem;
+
+    /* Custom anime colors */
+    --anime-primary: #6d28d9; /* violet-700 */
+    --anime-secondary: #5b21b6; /* violet-800 */
+    --anime-tertiary: #7c3aed; /* violet-600 */
+    --anime-dark: #140a2e; /* deeper than before */
     --anime-light: #f3f4f6;
-    --anime-purple: #8b5cf6;
-    --anime-light-purple: #c4b5fd;
-    --anime-deep-purple: #4c1d95;
+    --anime-purple: #6d28d9;
+    --anime-light-purple: #8b5cf6; /* was #c4b5fd */
+    --anime-deep-purple: #3b0764; /* violet-950 */
   }
 }
 
@@ -94,7 +55,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
     scroll-behavior: smooth;
   }
 
@@ -119,7 +82,6 @@
     @apply text-xl lg:text-2xl;
   }
 
-  /* Smooth scrolling for the entire page */
   html {
     scroll-behavior: smooth;
   }
@@ -127,7 +89,7 @@
 
 @layer components {
   .anime-card {
-    @apply bg-card text-card-foreground rounded-lg border border-border shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 overflow-hidden dark:hover:shadow-glow-sm;
+    @apply bg-card text-card-foreground rounded-lg border border-border shadow-sm transition-all duration-300 hover:shadow-glow-sm hover:-translate-y-1 overflow-hidden;
   }
 
   .status-badge {
@@ -139,11 +101,7 @@
   }
 
   .glass {
-    @apply bg-background/80 backdrop-blur-sm border border-border rounded-lg shadow-sm;
-  }
-
-  .glass-dark {
-    @apply dark:bg-background/60 dark:backdrop-blur-md dark:border-white/10 dark:shadow-glow-sm;
+    @apply bg-background/60 backdrop-blur-md border border-white/10 rounded-lg shadow-glow-sm;
   }
 
   .section-title {
@@ -151,11 +109,11 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-gray-700 to-gray-900 dark:from-white dark:to-gray-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent;
   }
 
   .text-gradient-purple {
-    @apply bg-gradient-to-r from-anime-tertiary to-anime-primary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-anime-light-purple to-anime-purple bg-clip-text text-transparent;
   }
 
   .nav-link {
@@ -163,14 +121,13 @@
   }
 
   .manga-bg {
-    @apply bg-no-repeat bg-cover bg-center opacity-50 grayscale-[60%] blur-[1px] dark:opacity-30 dark:grayscale-[80%] dark:blur-[1px];
+    @apply bg-no-repeat bg-cover bg-center opacity-30 grayscale-[80%] blur-[1px];
   }
 
   .btn-glow {
-    @apply dark:hover:shadow-glow transition-shadow;
+    @apply hover:shadow-glow transition-shadow;
   }
 
-  /* Custom button with pulse */
   .btn-anime {
     @apply relative overflow-hidden transform transition-all duration-300 hover:scale-105 active:scale-95;
   }
@@ -184,7 +141,6 @@
   }
 }
 
-/* Shadow effect for dark mode */
 @layer utilities {
   .shadow-glow {
     box-shadow: 0 0 15px 2px rgba(139, 92, 246, 0.3);
@@ -194,7 +150,6 @@
     box-shadow: 0 0 8px 1px rgba(139, 92, 246, 0.2);
   }
 
-  /* Enhanced animations */
   .animate-pulse-slow {
     animation: pulse-slow 3s infinite;
   }
@@ -203,7 +158,6 @@
     @apply transition-all duration-300 hover:scale-105;
   }
 
-  /* Add semi-transparent overlay */
   .overlay-gradient {
     @apply relative overflow-hidden;
   }
@@ -213,7 +167,6 @@
   }
 }
 
-/* Remove unused styles from App.css and integrate them here */
 #root {
   width: 100%;
   margin: 0 auto;
@@ -236,7 +189,6 @@
   }
 }
 
-/* Custom pulse animation for cards and elements */
 .pulse-subtle {
   animation: pulse-subtle 3s infinite;
 }
@@ -251,7 +203,6 @@
   }
 }
 
-/* Pulse animation for buttons and highlights */
 @keyframes pulse-slow {
   0%,
   100% {
@@ -262,7 +213,6 @@
   }
 }
 
-/* Smooth scroll indicator animation */
 @keyframes bounce {
   0%,
   100% {
@@ -272,20 +222,6 @@
     transform: translateY(10px);
   }
 }
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
 
 @keyframes typing {
   from {
@@ -306,24 +242,6 @@
   }
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #aaa;
-  }
-}
 @keyframes slideUp {
   0% {
     transform: translateY(20px);
@@ -334,6 +252,7 @@
     opacity: 1;
   }
 }
+
 @keyframes gradient-x {
   0%,
   100% {
@@ -343,17 +262,10 @@
     background-position: 100% 50%;
   }
 }
+
 .animate-gradient-x {
   background-size: 200% 200%;
   animation: gradient-x 3s ease infinite;
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
 }
 
 .typewriter {
@@ -362,11 +274,32 @@
   width: fit-content;
   margin: 0 auto;
   animation: typing 6s steps(60, end) forwards;
-
-  /* remove the border/cursor entirely */
   border-right: none;
 }
 
 .animate-bounce {
   animation: bounce 2s infinite;
+}
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground) / 0.5);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
 }

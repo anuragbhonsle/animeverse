@@ -10,7 +10,7 @@ export const CtaSection = () => {
 
   return (
     <section
-      className="relative bg-secondary/20 dark:bg-secondary/10 text-black dark:text-white py-16 overflow-hidden border-t border-border
+      className="relative bg-secondary/30 dark:bg-secondary/30 text-black dark:text-white py-16 overflow-hidden border-t border-border
 "
     >
       {/* Manga Panel Background */}

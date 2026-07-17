@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
@@ -24,22 +23,22 @@ export const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-background/70 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <span className="font-bold text-2xl bg-gradient-to-r from-anime-tertiary to-anime-secondary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent">
+        <Link to="/" className="flex items-center justify-self-start">
+          <span className="font-bold text-2xl bg-gradient-to-r from-anime-light-purple to-anime-purple bg-clip-text text-transparent">
             AnimeVerse
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        {/* Desktop Navigation — truly centered */}
+        <div className="hidden md:flex items-center gap-8 justify-self-center">
           <Link
             to="/"
             className={`font-medium transition-colors nav-link ${
               isActive("/")
-                ? "text-purple-600 dark:text-anime-light-purple"
-                : "text-foreground/80 hover:text-purple-600 dark:hover:text-anime-light-purple"
+                ? "text-anime-light-purple"
+                : "text-foreground/80 hover:text-anime-light-purple"
             }`}
           >
             Home
@@ -48,8 +47,8 @@ export const Navbar = () => {
             to="/browse"
             className={`font-medium transition-colors nav-link ${
               isActive("/browse")
-                ? "text-purple-600 dark:text-anime-light-purple"
-                : "text-foreground/80 hover:text-purple-600 dark:hover:text-anime-light-purple"
+                ? "text-anime-light-purple"
+                : "text-foreground/80 hover:text-anime-light-purple"
             }`}
           >
             Browse
@@ -59,8 +58,8 @@ export const Navbar = () => {
               to="/dashboard"
               className={`font-medium transition-colors nav-link ${
                 isActive("/dashboard")
-                  ? "text-purple-600 dark:text-anime-light-purple"
-                  : "text-foreground/80 hover:text-purple-600 dark:hover:text-anime-light-purple"
+                  ? "text-anime-light-purple"
+                  : "text-foreground/80 hover:text-anime-light-purple"
               }`}
             >
               Dashboard
@@ -69,9 +68,7 @@ export const Navbar = () => {
         </div>
 
         {/* User Actions */}
-        <div className="flex items-center space-x-3">
-          <ThemeToggle />
-
+        <div className="flex items-center justify-self-end gap-3">
           {/* User Menu - Desktop */}
           {!isMobile && (
             <>
@@ -87,7 +84,7 @@ export const Navbar = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
                     align="end"
-                    className="w-56 dark:bg-card/95 dark:backdrop-blur-sm"
+                    className="w-56 bg-card/95 backdrop-blur-sm"
                   >
                     <div className="px-2 py-1.5 text-sm font-medium border-b border-border mb-1">
                       {currentUser.email}
@@ -110,7 +107,7 @@ export const Navbar = () => {
                 <Button
                   asChild
                   variant="default"
-                  className="btn-glow rounded-xl" // bigger radius
+                  className="btn-glow rounded-full px-6"
                 >
                   <Link to="/auth">Sign In</Link>
                 </Button>
@@ -124,7 +121,7 @@ export const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={toggleMenu}
-              className="md:hidden"
+              className="md:hidden rounded-full"
             >
               <Menu className="h-6 w-6" />
             </Button>
@@ -134,14 +131,14 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobile && isMenuOpen && (
-        <div className="md:hidden px-4 py-3 bg-background/95 dark:bg-background/90 backdrop-blur-md border-t border-border animate-fade-in">
+        <div className="md:hidden px-4 py-3 bg-background/90 backdrop-blur-md border-t border-border animate-fade-in">
           <div className="flex flex-col space-y-3">
             <Link
               to="/"
-              className={`px-3 py-2 rounded-md transition-colors ${
+              className={`px-3 py-2 rounded-full transition-colors ${
                 isActive("/")
-                  ? "bg-purple-100 dark:bg-anime-light-purple/20 text-purple-600 dark:text-anime-light-purple"
-                  : "hover:bg-muted text-foreground/80 dark:text-foreground"
+                  ? "bg-anime-light-purple/20 text-anime-light-purple"
+                  : "hover:bg-muted text-foreground/80"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -149,10 +146,10 @@ export const Navbar = () => {
             </Link>
             <Link
               to="/browse"
-              className={`px-3 py-2 rounded-md transition-colors ${
+              className={`px-3 py-2 rounded-full transition-colors ${
                 isActive("/browse")
-                  ? "bg-purple-100 dark:bg-anime-light-purple/20 text-purple-600 dark:text-anime-light-purple"
-                  : "hover:bg-muted text-foreground/80 dark:text-foreground"
+                  ? "bg-anime-light-purple/20 text-anime-light-purple"
+                  : "hover:bg-muted text-foreground/80"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -161,10 +158,10 @@ export const Navbar = () => {
             {currentUser && (
               <Link
                 to="/dashboard"
-                className={`px-3 py-2 rounded-md transition-colors ${
+                className={`px-3 py-2 rounded-full transition-colors ${
                   isActive("/dashboard")
-                    ? "bg-purple-100 dark:bg-anime-light-purple/20 text-purple-600 dark:text-anime-light-purple"
-                    : "hover:bg-muted text-foreground/80 dark:text-foreground"
+                    ? "bg-anime-light-purple/20 text-anime-light-purple"
+                    : "hover:bg-muted text-foreground/80"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -189,7 +186,7 @@ export const Navbar = () => {
                     signOut();
                     setIsMenuOpen(false);
                   }}
-                  className="mx-3 text-destructive border-destructive/20 hover:bg-destructive/10"
+                  className="mx-3 rounded-full text-destructive border-destructive/20 hover:bg-destructive/10"
                 >
                   <LogOut className="mr-2 h-4 w-4" />
                   Sign Out
@@ -200,7 +197,7 @@ export const Navbar = () => {
                 asChild
                 variant="default"
                 size="sm"
-                className="mx-3 w-full"
+                className="mx-3 w-full rounded-full"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Link to="/auth">Sign In</Link>

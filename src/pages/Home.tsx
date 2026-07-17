@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -8,7 +7,7 @@ import { CtaSection } from "@/components/home/CtaSection";
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-black">
       <Navbar />
 
       <main className="flex-grow">

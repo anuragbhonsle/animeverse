@@ -15,35 +15,34 @@ export const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true }}
       whileHover={{
-        y: -6,
-        scale: 1.02,
-        boxShadow: "0 15px 35px rgba(0,0,0,0.15)",
+        y: 0,
+        scale: 1.04,
+        boxShadow: "0 18px 35px rgba(0,0,0,0.15)",
       }}
-      className="relative rounded-2xl p-6 transition-all duration-300
-        border bg-card/80 backdrop-blur-lg 
-        border-border hover:border-primary/40 hover:shadow-lg group"
+      className="relative rounded-3xl p-6 transition-all duration-300
+        border border-transparent bg-secondary
+        backdrop-blur-xl hover:border-primary/50 hover:shadow-2xl group"
     >
       {/* Icon wrapper */}
       <div
-        className="h-14 w-14 flex items-center justify-center rounded-xl 
-        bg-primary/10 dark:bg-primary/20 text-primary 
-        ring-1 ring-inset ring-primary/20 dark:ring-primary/30
-        shadow-sm mb-4 transition-transform duration-300
-        group-hover:scale-110"
+        className="h-16 w-16 flex items-center justify-center rounded-xl 
+        bg-gradient-to-tr from-purple-500/20 to-purple-600/30 text-purple-600
+        ring-1 ring-inset ring-purple-500/30 dark:ring-purple-400/40
+        shadow-md mb-5 transition-transform duration-300 group-hover:scale-110"
       >
         {icon}
       </div>
 
       {/* Title */}
-      <h3 className="text-xl font-bold text-foreground">{title}</h3>
+      <h3 className="text-xl font-semibold text-foreground mb-2">{title}</h3>
 
       {/* Description */}
-      <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+      <p className="text-sm text-muted-foreground leading-relaxed">
         {description}
       </p>
 
       {/* Subtle animated border highlight */}
-      <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-primary/30 transition-all duration-500 pointer-events-none" />
+      <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-purple-500/40 transition-all duration-500 pointer-events-none" />
     </motion.div>
   );
 };

@@ -22,22 +22,25 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section
-      className="relative min-h-[93vh] flex items-center justify-center overflow-hidden
-      bg-white dark:bg-black"
-    >
+    <section className="relative min-h-[93vh] flex items-center justify-center overflow-hidden bg-white dark:bg-black">
       {/* Background GIF */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 h-full w-full"
           style={{
             backgroundImage:
               'url("https://i.pinimg.com/originals/b0/a5/40/b0a5403e757bd83e02131c4d2e82c351.gif")',
             backgroundSize: "cover",
             backgroundPosition: "center",
-            filter: "brightness(0.8) contrast(1.3) blur(1px) saturate(130%)",
-            opacity: 1,
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(0.7) contrast(1.3) saturate(130%)",
+            backgroundBlendMode: "darken",
           }}
+          aria-hidden="true"
+        />
+        {/* Gradient overlay for text legibility */}
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50"
           aria-hidden="true"
         />
       </div>
@@ -63,14 +66,10 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
-            className="text-lg md:text-xl max-w-2xl mx-auto text-white/90 "
+            className="text-lg md:text-xl max-w-2xl mx-auto text-white/90"
           >
-            Effortlessly track, manage, and explore your{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent font-bold">
-              Anime
-            </span>{" "}
-            world — all in one place. Your next favorite show is just a click
-            away.
+            Effortlessly track, manage, and explore your Anime world, all in one
+            place.
           </motion.p>
 
           {/* Buttons */}
@@ -79,10 +78,13 @@ export const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="group px-10 py-4 rounded-3xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white font-bold shadow-xl transition-all duration-500 ease-out
-                 hover:scale-105 hover:shadow-2xl animate-gradient-x"
+                className="group px-10 py-4 rounded-3xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white font-bold shadow-xl transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl animate-gradient-x"
               >
-                <Link to="/dashboard" className="flex items-center gap-2">
+                <Link
+                  to="/dashboard"
+                  className="flex items-center gap-2"
+                  style={{ fontFamily: "Poppins, sans-serif" }}
+                >
                   Go to Dashboard
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
                 </Link>
@@ -91,10 +93,13 @@ export const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="group px-10 py-4 rounded-3xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white font-bold shadow-xl transition-all duration-500 ease-out
-                 hover:scale-105 hover:shadow-2xl animate-gradient-x"
+                className="group px-10 py-4 rounded-3xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white font-bold shadow-xl transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl animate-gradient-x"
               >
-                <Link to="/auth" className="flex items-center gap-2">
+                <Link
+                  to="/auth"
+                  className="flex items-center gap-2"
+                  style={{ fontFamily: "Poppins, sans-serif" }}
+                >
                   Sign In
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
                 </Link>
@@ -104,12 +109,12 @@ export const HeroSection = () => {
             <Button
               asChild
               size="lg"
-              className="group px-10 py-4 rounded-3xl bg-black/95 text-white font-bold shadow-xl transition-all duration-500 ease-out
-               hover:scale-105 hover:shadow-2xl hover:bg-black/80"
+              className="group px-10 py-4 rounded-3xl bg-black/95 text-white font-bold shadow-xl transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl hover:bg-black/80"
             >
               <Link
                 to="/browse"
                 className="flex items-center justify-center gap-2"
+                style={{ fontFamily: "Poppins, sans-serif" }}
               >
                 Browse Anime
               </Link>

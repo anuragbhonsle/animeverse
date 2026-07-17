@@ -6,7 +6,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-secondary/30 dark:bg-secondary/10">
+    <footer className="border-t border-border bg-black">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
@@ -69,7 +69,7 @@ export const Footer = () => {
                   Twitter
                 </a>
                 <a
-                  href="https://myanimelist.net"
+                  href="https://myanimelist.net/profile/Kazuya___"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center"
