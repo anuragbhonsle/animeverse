@@ -68,6 +68,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "shimmer-pan": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },

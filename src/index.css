@@ -1,7 +1,80 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Plus+Jakarta+Sans:wght@700&family=Space+Grotesk:wght@700&family=Syne:wght@800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 4%;
 
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+
+    --primary: 265 72% 48%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 10% 4%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 270 68% 44%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 265 72% 48%;
+
+    --radius: 0.5rem;
+
+    --anime-primary: #6d28d9;
+    --anime-secondary: #5b21b6;
+    --anime-tertiary: #7c3aed;
+    --anime-dark: #140a2e;
+    --anime-light: #f3f4f6;
+    --anime-purple: #6d28d9;
+    --anime-light-purple: #8b5cf6;
+    --anime-deep-purple: #3b0764;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 4.5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 265 72% 48%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 270 68% 44%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 265 72% 48%;
+  }
+}
 @layer base {
   :root {
     --background: 240 10% 4%;
@@ -51,10 +124,12 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: "Satoshi", sans-serif;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Satoshi", sans-serif;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
@@ -68,6 +143,7 @@
   h5,
   h6 {
     @apply font-semibold tracking-tight;
+    font-family: "Satoshi", sans-serif;
   }
 
   h1 {
@@ -84,6 +160,7 @@
 
   html {
     scroll-behavior: smooth;
+    font-family: "Satoshi", sans-serif;
   }
 }
 
@@ -170,6 +247,7 @@
 #root {
   width: 100%;
   margin: 0 auto;
+  font-family: "Satoshi", sans-serif;
 }
 
 .page-container {
@@ -280,6 +358,7 @@
 .animate-bounce {
   animation: bounce 2s infinite;
 }
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

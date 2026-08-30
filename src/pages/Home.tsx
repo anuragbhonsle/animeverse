@@ -4,6 +4,8 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { FeaturesSection } from "@/components/home/FeaturesSection";
 import { CtaSection } from "@/components/home/CtaSection";
+import { FAQSection } from "@/components/home/FAQSection";
+import { AnimeSpotlightCard } from "@/components/home/AnimeSpotlightCard";
 
 const Home = () => {
   return (
@@ -12,7 +14,9 @@ const Home = () => {
 
       <main className="flex-grow">
         <HeroSection />
+        <AnimeSpotlightCard />
         <FeaturesSection />
+
         <CtaSection />
       </main>
 

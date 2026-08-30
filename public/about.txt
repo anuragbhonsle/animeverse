@@ -1,6 +1,6 @@
 This favicon was generated using the following font:
 
-- Font Title: Bubblegum Sans
+- Font Title: Roboto
 - Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/bubblegumsans/v20/AYCSpXb_Z9EORv1M5QTjEzMEtdaHzoPPb7R4.ttf
+- Font Source: https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZEammTggvWl0Qn.ttf
 - Font License: undefined)

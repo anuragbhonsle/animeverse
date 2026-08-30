@@ -1,5 +1,3 @@
-
-import React from "react";
 import { Anime, UserAnimeEntry, WatchStatus } from "@/data/animeData";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import {
@@ -28,29 +26,34 @@ interface AnimeCardProps {
   onClick?: (anime: Anime) => void;
 }
 
-export const AnimeCard = ({ 
-  anime, 
+export const AnimeCard = ({
+  anime,
   userEntry,
   onStatusChange,
-  onClick 
+  onClick,
 }: AnimeCardProps) => {
   const { currentUser } = useAuth();
-  
-  const handleStatusChange = (status: WatchStatus) => {
+
+  const handleStatusChange = (e: React.MouseEvent, status: WatchStatus) => {
+    e.stopPropagation(); // Prevents trigger of card onClick
     if (onStatusChange) {
       onStatusChange(anime.id, status);
     }
   };
 
   return (
-    <Card 
+    <Card
       className="anime-card flex flex-col h-full"
       onClick={() => onClick && onClick(anime)}
     >
-      <div className="relative h-48 overflow-hidden rounded-t-lg">
-        <img 
-          src={anime.imageUrl} 
+      <div className="relative h-48 overflow-hidden rounded-t-lg bg-black">
+        <img
+          src={anime.imageUrl}
           alt={anime.title}
+          loading="lazy"
+          decoding="async"
+          width={400}
+          height={200}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
         />
         {userEntry && (
@@ -94,38 +97,45 @@ export const AnimeCard = ({
           </svg>
           <span className="text-sm font-medium">{anime.rating.toFixed(1)}</span>
         </div>
-        
+
         {currentUser && (
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
               <Button variant="outline" size="sm">
                 {userEntry ? "Update" : "Add to List"}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => handleStatusChange("plan_to_watch")}>
+              <DropdownMenuItem
+                onClick={(e) => handleStatusChange(e, "plan_to_watch")}
+              >
                 Plan to Watch
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => handleStatusChange("watching")}>
+              <DropdownMenuItem
+                onClick={(e) => handleStatusChange(e, "watching")}
+              >
                 Watching
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => handleStatusChange("completed")}>
+              <DropdownMenuItem
+                onClick={(e) => handleStatusChange(e, "completed")}
+              >
                 Completed
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => handleStatusChange("on_hold")}>
+              <DropdownMenuItem
+                onClick={(e) => handleStatusChange(e, "on_hold")}
+              >
                 On Hold
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => handleStatusChange("dropped")}>
+              <DropdownMenuItem
+                onClick={(e) => handleStatusChange(e, "dropped")}
+              >
                 Dropped
               </DropdownMenuItem>
               {userEntry && (
                 <>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleStatusChange("" as WatchStatus); // This is to remove the anime
-                    }}
+                  <DropdownMenuItem
+                    onClick={(e) => handleStatusChange(e, "" as WatchStatus)}
                     className="text-destructive"
                   >
                     Remove from List

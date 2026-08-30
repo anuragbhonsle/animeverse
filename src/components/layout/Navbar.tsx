@@ -3,13 +3,15 @@ import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { User, LogOut, Menu } from "lucide-react";
+import { User, LogOut, Menu, Home } from "lucide-react";
+import { IconBrowser, IconDashboard } from "@tabler/icons-react";
 
 export const Navbar = () => {
   const { currentUser, signOut } = useAuth();
@@ -22,15 +24,19 @@ export const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/70 backdrop-blur-md border-b border-border">
+    <nav className="sticky top-0 z-50 bg-background/70 backdrop-blur-md ">
       <div className="container mx-auto px-4 py-3 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
         {/* Logo */}
         <Link to="/" className="flex items-center justify-self-start">
-          <span className="font-bold text-2xl bg-gradient-to-r from-anime-light-purple to-anime-purple bg-clip-text text-transparent">
-            AnimeVerse
+          <span
+            className="text-2xl font-bold tracking-tight"
+            style={{ fontFamily: "'Raleway', sans-serif" }}
+          >
+            <span className="bg-gradient-to-br from-white via-white/90 to-white/60 bg-clip-text text-transparent drop-shadow-sm">
+              AnimeVerse
+            </span>
           </span>
         </Link>
-
         {/* Desktop Navigation — truly centered */}
         <div className="hidden md:flex items-center gap-8 justify-self-center">
           <Link
@@ -41,7 +47,7 @@ export const Navbar = () => {
                 : "text-foreground/80 hover:text-anime-light-purple"
             }`}
           >
-            Home
+            <Home />
           </Link>
           <Link
             to="/browse"
@@ -51,7 +57,7 @@ export const Navbar = () => {
                 : "text-foreground/80 hover:text-anime-light-purple"
             }`}
           >
-            Browse
+            <IconBrowser />
           </Link>
           {currentUser && (
             <Link
@@ -62,7 +68,7 @@ export const Navbar = () => {
                   : "text-foreground/80 hover:text-anime-light-purple"
               }`}
             >
-              Dashboard
+              <IconDashboard />
             </Link>
           )}
         </div>
@@ -104,13 +110,16 @@ export const Navbar = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <Button
-                  asChild
-                  variant="default"
-                  className="btn-glow rounded-full px-6"
+                <Link
+                  to="/auth"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 transition-transform duration-300 hover:scale-105"
                 >
-                  <Link to="/auth">Sign In</Link>
-                </Button>
+                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#7C3AED_50%,#E2CBFF_100%)]" />
+                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-6 py-1 text-sm font-medium text-white backdrop-blur-3xl group">
+                    Login
+                  </span>
+                </Link>
               )}
             </>
           )}

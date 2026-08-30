@@ -26,6 +26,18 @@ export interface UserAnimeEntry {
 
 export const animeData: Anime[] = [
   {
+    id: 45,
+    title: "JoJo’s Bizarre Adventure",
+    imageUrl:
+      "https://i.pinimg.com/originals/56/60/47/56604719fe6970d7b8406bd792ba81e8.gif",
+    description:
+      "The Joestar family battles supernatural foes across generations, wielding unique powers called Stands in a stylish, action-packed saga.",
+    genres: ["Action", "Adventure", "Supernatural"],
+    episodes: 190,
+    rating: 8.5,
+    releaseYear: 2012,
+  },
+  {
     id: 1,
     title: "Attack on Titan",
     imageUrl:
@@ -493,18 +505,7 @@ export const animeData: Anime[] = [
     rating: 8.4,
     releaseYear: 2022,
   },
-  {
-    id: 45,
-    title: "JoJo’s Bizarre Adventure",
-    imageUrl:
-      "https://i.pinimg.com/originals/56/60/47/56604719fe6970d7b8406bd792ba81e8.gif",
-    description:
-      "The Joestar family battles supernatural foes across generations, wielding unique powers called Stands in a stylish, action-packed saga.",
-    genres: ["Action", "Adventure", "Supernatural"],
-    episodes: 190,
-    rating: 8.5,
-    releaseYear: 2012,
-  },
+
   {
     id: 46,
     title: "Princess Mononoke",

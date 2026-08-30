@@ -1,95 +1,96 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { Github, ExternalLink, Twitter } from "lucide-react";
-
+import { Github, ExternalLink } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const navLinks = [
+    { to: "/", label: "Home" },
+    { to: "/browse", label: "Browse" },
+    { to: "/dashboard", label: "Dashboard" },
+  ];
+
+  const socialLinks = [
+    {
+      href: "https://github.com/anuragbhonsle/animeverse",
+      label: "GitHub",
+      icon: Github,
+    },
+    {
+      href: "https://x.com/Anuraaaag7",
+      label: "X",
+      icon: FaXTwitter,
+    },
+    {
+      href: "https://myanimelist.net/profile/Kazuya___",
+      label: "MyAnimeList",
+      icon: ExternalLink,
+    },
+  ];
+
   return (
-    <footer className="border-t border-border bg-black">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <Link to="/" className="font-bold text-xl text-foreground">
-              <span className="bg-gradient-to-r from-anime-tertiary to-anime-secondary dark:from-anime-light-purple dark:to-anime-purple bg-clip-text text-transparent">
+    <footer className="relative bg-black pb-6 pt-12 lg:pb-8 lg:pt-12">
+      <div className="container mx-auto px-4 lg:px-8">
+        {/* Top Section: Brand + Social Icons */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <Link
+            to="/"
+            className="flex items-center gap-x-2 w-fit"
+            aria-label="AnimeVerse"
+          >
+            <span
+              className="text-xl font-medium tracking-tight"
+              style={{ fontFamily: "'Raleway', sans-serif" }}
+            >
+              <span className="bg-gradient-to-br from-white via-white/90 to-white/60 bg-clip-text text-transparent drop-shadow-sm">
                 AnimeVerse
               </span>
-            </Link>
-            <p className="mt-2 text-muted-foreground text-sm">
-              Your personal anime watchlist manager
-            </p>
-          </div>
+            </span>
+          </Link>
 
-          <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-12">
-            <div>
-              <h4 className="font-medium mb-3 text-foreground">Navigation</h4>
-              <div className="flex flex-col space-y-2">
-                <Link
-                  to="/"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/browse"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Browse
-                </Link>
-                <Link
-                  to="/dashboard"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Dashboard
-                </Link>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-medium mb-3 text-foreground">
-                External Links
-              </h4>
-              <div className="flex flex-col space-y-2">
+          {/* Direct Social Icons */}
+          <ul className="flex list-none space-x-5 items-center">
+            {socialLinks.map(({ href, label, icon: Icon }) => (
+              <li key={href}>
                 <a
-                  href="https://github.com/anuragbhonsle/animeverse"
+                  href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center"
+                  aria-label={label}
+                  className="text-white/60 hover:text-white transition-colors p-1 flex items-center justify-center"
                 >
-                  <Github className="h-3.5 w-3.5 mr-1.5" />
-                  GitHub
+                  <Icon className="h-5 w-5" />
                 </a>
-                <a
-                  href="https://x.com/Anuraaaag7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center"
-                >
-                  <Twitter className="h-3.5 w-3.5 mr-1.5" />
-                  Twitter
-                </a>
-                <a
-                  href="https://myanimelist.net/profile/Kazuya___"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center"
-                >
-                  <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
-                  MyAnimeList
-                </a>
-              </div>
-            </div>
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="mt-2 pt-2 text-center">
-          <p className="text-muted-foreground text-sm">
-            © {currentYear} AnimeVerse. All rights reserved.
-          </p>
-          <p className="text-muted-foreground text-xs mt-1 opacity-70">
-            This project is for educational purposes only. Created by{" "}
-            <strong>Anurag</strong>. This is not the final version of the site.
-          </p>
+        {/* Divider & Bottom Grid */}
+        <div className="mt-6 pt-6 md:mt-8 md:pt-8 lg:grid lg:grid-cols-10 gap-4 items-center ">
+          {/* Main Navigation Links */}
+          <nav className="lg:col-[4/11] lg:row-start-1">
+            <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
+              {navLinks.map((link) => (
+                <li key={link.to} className="my-1 mx-2 shrink-0">
+                  <Link
+                    to={link.to}
+                    className="text-sm text-white/70 hover:text-white underline-offset-4 hover:underline transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Copyright & Info */}
+          <div className="mt-6 text-sm leading-6 text-white/40 lg:mt-0 lg:row-start-1 lg:col-[1/4]">
+            <div>© {currentYear} AnimeVerse. All rights reserved.</div>
+            <div className="text-xs text-white/30 mt-0.5">
+              Built by <span className="text-white/50 font-medium">Anurag</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
