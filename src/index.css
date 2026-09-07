@@ -1,27 +1,31 @@
 @import url("https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Plus+Jakarta+Sans:wght@700&family=Space+Grotesk:wght@700&family=Syne:wght@800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 4%;
+  :root,
+  .dark,
+  :root[class~="light"] {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 4%;
+    --card: 240 10% 4.5%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 4%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 265 72% 48%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 10% 4%;
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 64.9%;
 
     --accent: 270 68% 44%;
     --accent-foreground: 0 0% 98%;
@@ -29,12 +33,13 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
     --ring: 265 72% 48%;
 
     --radius: 0.5rem;
 
+    /* Anime dynamic palette */
     --anime-primary: #6d28d9;
     --anime-secondary: #5b21b6;
     --anime-tertiary: #7c3aed;
@@ -43,81 +48,6 @@
     --anime-purple: #6d28d9;
     --anime-light-purple: #8b5cf6;
     --anime-deep-purple: #3b0764;
-  }
-
-  .dark {
-    --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
-
-    --card: 240 10% 4.5%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 10% 6%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 265 72% 48%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 0 0% 0%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 64.9%;
-
-    --accent: 270 68% 44%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 5% 20%;
-    --input: 240 5% 20%;
-    --ring: 265 72% 48%;
-  }
-}
-@layer base {
-  :root {
-    --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
-
-    --card: 240 10% 4.5%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 10% 6%;
-    --popover-foreground: 0 0% 98%;
-
-    /* Darker Purple */
-    --primary: 265 72% 48%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 0 0% 0%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 64.9%;
-
-    /* Darker Violet */
-    --accent: 270 68% 44%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 5% 20%;
-    --input: 240 5% 20%;
-    --ring: 265 72% 48%;
-
-    --radius: 0.5rem;
-
-    /* Custom anime colors */
-    --anime-primary: #6d28d9; /* violet-700 */
-    --anime-secondary: #5b21b6; /* violet-800 */
-    --anime-tertiary: #7c3aed; /* violet-600 */
-    --anime-dark: #140a2e; /* deeper than before */
-    --anime-light: #f3f4f6;
-    --anime-purple: #6d28d9;
-    --anime-light-purple: #8b5cf6; /* was #c4b5fd */
-    --anime-deep-purple: #3b0764; /* violet-950 */
   }
 }
 
@@ -134,6 +64,7 @@
       "rlig" 1,
       "calt" 1;
     scroll-behavior: smooth;
+    color-scheme: dark; /* Force browser UI elements like scrollbars to render dark */
   }
 
   h1,
@@ -161,6 +92,7 @@
   html {
     scroll-behavior: smooth;
     font-family: "Satoshi", sans-serif;
+    color-scheme: dark;
   }
 }
 
@@ -310,16 +242,6 @@
   }
 }
 
-@keyframes blink {
-  0%,
-  100% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #aaa;
-  }
-}
-
 @keyframes slideUp {
   0% {
     transform: translateY(20px);
@@ -359,14 +281,14 @@
   animation: bounce 2s infinite;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar setup */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #000000; /* Pitch black track */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -378,7 +300,8 @@
   background-color: hsl(var(--muted-foreground) / 0.5);
 }
 
+/* Firefox scrollbar support */
 * {
   scrollbar-width: thin;
-  scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+  scrollbar-color: hsl(var(--muted-foreground) / 0.3) #000000; /* [thumb color] [track color] */
 }

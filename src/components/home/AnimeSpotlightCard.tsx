@@ -35,11 +35,11 @@ export const AnimeSpotlightCard = () => {
   };
 
   return (
-    <section className="relative min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-black py-16 lg:py-16">
+    <section className="relative min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-black py-20 lg:py-20">
       {/* Background Glow Accents */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-violet-600/10 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-black blur-[120px] pointer-events-none rounded-full" />
 
-      <div className="group relative w-full max-w-5xl mx-auto px-4 z-10">
+      <div className="group relative w-full max-w-5xl mx-autos z-10">
         <div className=" text-center flex flex-col items-center">
           <SectionHeading
             prefix="Explore Your"
@@ -48,10 +48,10 @@ export const AnimeSpotlightCard = () => {
           />
         </div>
 
-        <div className="relative aspect-[16/10] sm:aspect-[16/8.5] w-full overflow-hidden rounded-[2.5rem] sm:rounded-[3rem] bg-neutral-950 border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.8)]">
+        <div className="relative aspect-[16/9] sm:aspect-[16/8.5] w-full overflow-hidden rounded-3xl sm:rounded-3xl bg-neutral-950 border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.8)] ">
           {/* Cinematic Gradient Overlays */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none" />
-          <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/60 via-transparent to-black/60 pointer-events-none" />
+
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/20 via-transparent to-black/40 pointer-events-none" />
 
           {/* Active Image Animation */}
           <AnimatePresence mode="wait">
@@ -63,7 +63,7 @@ export const AnimeSpotlightCard = () => {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               src={currentAnime.imageUrl}
               alt={`Scene from ${currentAnime.title}`}
-              className="absolute inset-0 h-full w-full object-cover contrast-110 saturate-110 brightness-98 rounded-3xl"
+              className="absolute inset-0 h-full w-full object-cover contrast-110 saturate-110 brightness-98 rounded-3xl p-4"
             />
           </AnimatePresence>
 

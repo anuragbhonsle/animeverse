@@ -3,14 +3,12 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { AuthProvider } from "@/context/AuthContext";
-import { useEffect } from "react";
+import { AuthProvider, useAuth } from "@/context/AuthContext";
 import Home from "./pages/Home";
 import Browse from "./pages/Browse";
 import Dashboard from "./pages/Dashboard";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
-import { useAuth } from "@/context/AuthContext";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import { ThemeProvider } from "./context/ThemeContext";
@@ -41,6 +39,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/browse" element={<Browse />} />
+
       <Route
         path="/dashboard"
         element={
@@ -49,6 +48,7 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+
       <Route path="/auth" element={<Auth />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
@@ -58,21 +58,6 @@ const AppRoutes = () => {
 };
 
 const App = () => {
-  // On initial mount, set up theme from localStorage
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-
-    // Set initial theme class on document
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
@@ -80,6 +65,7 @@ const App = () => {
           <TooltipProvider>
             <Toaster />
             <Sonner />
+
             <BrowserRouter>
               <AppRoutes />
             </BrowserRouter>

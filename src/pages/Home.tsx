@@ -16,8 +16,6 @@ const Home = () => {
         <HeroSection />
         <AnimeSpotlightCard />
         <FeaturesSection />
-
-        <CtaSection />
       </main>
 
       <Footer />

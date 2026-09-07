@@ -10,6 +10,7 @@ import {
   useTransform,
   type Variants,
 } from "framer-motion";
+import { Gif } from "./Gif";
 
 const FLOATING_IMAGES = [
   "/ok.png",
@@ -151,7 +152,7 @@ export const HeroSection = () => {
           {/* 5. Enhanced Heading with Animated Gradient Text */}
           <h1
             style={{ fontFamily: "'Raleway', sans-serif" }}
-            className="flex flex-wrap items-center justify-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] tracking-tighter text-white gap-x-[0.3em] font-medium "
+            className="flex flex-wrap items-center justify-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] tracking-tighter text-white gap-x-[0.3em] font-semibold "
           >
             <motion.span
               initial="hidden"
@@ -216,23 +217,8 @@ export const HeroSection = () => {
             <Button
               asChild
               size="lg"
-              className="group relative w-full sm:w-auto px-8 py-6 rounded-full bg-white text-black font-semibold shadow-[0_0_25px_rgba(139,92,246,0.10)] transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-[0_0_40px_rgba(139,92,246,0.55)] active:scale-95 overflow-hidden"
-            >
-              <Link
-                to={currentUser ? "/dashboard" : "/auth"}
-                className="flex items-center justify-center gap-3 text-base tracking-wide"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
-              >
-                <span>{currentUser ? "Dashboard" : "Login"}</span>
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-              </Link>
-            </Button>
-
-            <Button
-              asChild
-              size="lg"
               variant="outline"
-              className="group w-full sm:w-auto px-8 py-6 rounded-full border-white/15 bg-white/5 backdrop-blur-md text-white/90 font-medium transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:border-white/30 hover:text-white active:scale-95 shadow-sm"
+              className="group w-full sm:w-auto px-8 py-6 rounded-full border-black/15 bg-white backdrop-blur-md text-black font-semibold transition-all duration-300 hover:scale-105 hover:bg-white/90 hover:border-black/30 hover:text-black active:scale-95 shadow-sm"
             >
               <Link
                 to="/browse"

@@ -70,7 +70,7 @@ const ImageHeader = ({ src, alt }: { src: string; alt: string }) => (
     initial={{ opacity: 1 }}
     whileHover={{ scale: 1.02 }}
     transition={{ duration: 0.2 }}
-    className="relative flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden group"
+    className="relative flex flex-1 w-full h-full min-h-[6rem] rounded-2xl overflow-hidden group"
   >
     <img
       src={src}

@@ -24,57 +24,61 @@ export const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/70 backdrop-blur-md ">
-      <div className="container mx-auto px-4 py-3 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
-        {/* Logo */}
-        <Link to="/" className="flex items-center justify-self-start">
-          <span
-            className="text-2xl font-bold tracking-tight"
-            style={{ fontFamily: "'Raleway', sans-serif" }}
-          >
-            <span className="bg-gradient-to-br from-white via-white/90 to-white/60 bg-clip-text text-transparent drop-shadow-sm">
-              AnimeVerse
+    <nav className="sticky top-0 z-50 bg-background/70 backdrop-blur-md">
+      {/* 12-column grid guarantees absolute horizontal centering for the middle column */}
+      <div className="container mx-auto py-3 grid grid-cols-12 items-center">
+        {/* Left: Logo (3 columns) */}
+        <div className="col-span-3 flex items-center justify-start">
+          <Link to="/">
+            <span
+              className="text-2xl font-bold tracking-tight"
+              style={{ fontFamily: "'Raleway', sans-serif" }}
+            >
+              <span className="bg-gradient-to-br from-white via-white/90 to-white/60 bg-clip-text text-transparent drop-shadow-sm">
+                AnimeVerse
+              </span>
             </span>
-          </span>
-        </Link>
-        {/* Desktop Navigation — truly centered */}
-        <div className="hidden md:flex items-center gap-8 justify-self-center">
+          </Link>
+        </div>
+
+        {/* Center: Desktop Navigation Links (6 columns - strictly centered) */}
+        <div className="hidden md:col-span-6 md:flex items-center justify-center gap-8">
           <Link
             to="/"
             className={`font-medium transition-colors nav-link ${
               isActive("/")
-                ? "text-anime-light-purple"
+                ? "text-white"
                 : "text-foreground/80 hover:text-anime-light-purple"
             }`}
           >
-            <Home />
+            <Home className="w-5 h-5" />
           </Link>
           <Link
             to="/browse"
             className={`font-medium transition-colors nav-link ${
               isActive("/browse")
-                ? "text-anime-light-purple"
+                ? "text-white"
                 : "text-foreground/80 hover:text-anime-light-purple"
             }`}
           >
-            <IconBrowser />
+            <IconBrowser className="w-5 h-5" />
           </Link>
           {currentUser && (
             <Link
               to="/dashboard"
               className={`font-medium transition-colors nav-link ${
                 isActive("/dashboard")
-                  ? "text-anime-light-purple"
+                  ? "text-white"
                   : "text-foreground/80 hover:text-anime-light-purple"
               }`}
             >
-              <IconDashboard />
+              <IconDashboard className="w-5 h-5" />
             </Link>
           )}
         </div>
 
-        {/* User Actions */}
-        <div className="flex items-center justify-self-end gap-3">
+        {/* Right: User Actions (3 columns) */}
+        <div className="col-span-9 md:col-span-3 flex items-center justify-end gap-3">
           {/* User Menu - Desktop */}
           {!isMobile && (
             <>

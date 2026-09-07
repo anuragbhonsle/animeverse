@@ -6,11 +6,11 @@ import { SectionHeading } from "./SectionHeading";
 
 export const FeaturesSection = () => {
   return (
-    <section className="w-full py-20 lg:py-20 bg-black rounded-3xl">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="w-full py-20 lg:py-20 bg-black">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
         {/* Heading */}
         <SectionHeading
-          prefix="Manage Your"
+          prefix="Control Your"
           highlight="Anime"
           suffix="Experience"
         />

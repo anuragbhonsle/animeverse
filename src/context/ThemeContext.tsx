@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect } from "react";
 
-type Theme = "light" | "dark";
+type Theme = "dark";
 
 interface ThemeContextType {
   theme: Theme;
@@ -10,29 +10,18 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-const STORAGE_KEY = "animeverse-theme";
-
-function getInitialTheme(): Theme {
-  const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
-  if (stored === "light" || stored === "dark") return stored;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-}
-
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setThemeState] = useState<Theme>(getInitialTheme);
+  const theme: Theme = "dark";
 
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove("light", "dark");
-    root.classList.add(theme);
-    localStorage.setItem(STORAGE_KEY, theme);
-  }, [theme]);
+    root.classList.remove("light");
+    root.classList.add("dark");
+  }, []);
 
-  const setTheme = (newTheme: Theme) => setThemeState(newTheme);
-  const toggleTheme = () =>
-    setThemeState((prev) => (prev === "dark" ? "light" : "dark"));
+  // No-op functions preserved to prevent breaking components that call toggleTheme or setTheme
+  const setTheme = () => {};
+  const toggleTheme = () => {};
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>

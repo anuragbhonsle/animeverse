@@ -36,8 +36,14 @@ export function Gif() {
   ];
 
   return (
-    <div className="w-full h-full">
+    <div className="absolute inset-0 z-10 h-full w-full overflow-hidden">
       <ThreeDMarquee images={images} />
+
+      {/* Cinematic dark overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/80" />
+
+      {/* Vignette */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_15%,rgba(0,0,0,0.7)_100%)]" />
     </div>
   );
 }
