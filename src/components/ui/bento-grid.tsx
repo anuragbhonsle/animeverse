@@ -1,3 +1,4 @@
+import React from "react";
 import { cn } from "@/lib/utils";
 
 export const BentoGrid = ({
@@ -35,14 +36,14 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento row-span-1 flex flex-col justify-between space-y-4 rounded-3xl border border-white/10 bg-black p-4 text-card-foreground shadow-none transition duration-200 hover:shadow-glow-sm hover:-translate-y-1",
+        "group/bento row-span-1 flex flex-col justify-between space-y-4 rounded-3xl border border-border/80 bg-card p-4 text-card-foreground shadow-sm transition duration-200 hover:border-border hover:shadow-md hover:-translate-y-1 dark:shadow-none dark:hover:shadow-glow-sm",
         className,
       )}
     >
       {header}
       <div className="transition duration-200 group-hover/bento:translate-x-2">
         {icon}
-        <div className="mt-2 mb-2 font-sans font-bold text-foreground">
+        <div className="mt-2 mb-2 font-sans font-bold text-card-foreground">
           {title}
         </div>
         <div className="font-sans text-xs font-normal text-muted-foreground">

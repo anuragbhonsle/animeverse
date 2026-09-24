@@ -7,7 +7,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -17,6 +16,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { toast } from "@/components/ui/use-toast";
 import { AlertCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Auth = () => {
   const { currentUser, signIn, signUp, loading: authLoading } = useAuth();
@@ -29,6 +29,19 @@ const Auth = () => {
   if (currentUser) {
     return <Navigate to="/dashboard" />;
   }
+
+  const handleGoogleLogin = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: window.location.origin,
+      },
+    });
+
+    if (error) {
+      console.error("Google login failed:", error.message);
+    }
+  };
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,24 +97,23 @@ const Auth = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Navbar />
-      <main className="relative flex-grow flex items-center justify-center py-20 px-4 overflow-hidden bg-secondary">
-        {/* Ambient glow */}
-        <div
-          className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-anime-purple/10 blur-3xl"
-          aria-hidden="true"
-        />
-
+      <main className="relative flex-grow flex items-center justify-center py-20 px-4 overflow-hidden bg-background">
         <Card className="relative w-full max-w-md mx-auto shadow-xl border-border/60 bg-card/90 backdrop-blur-sm">
           <Tabs defaultValue="login" className="w-full">
-            <CardHeader>
-              <div className="flex justify-between items-center">
-                <CardTitle className="text-2xl font-bold">
-                  Welcome to{" "}
-                  <span className="bg-gradient-to-r from-anime-light-purple to-anime-purple bg-clip-text text-transparent">
-                    AnimeVerse
-                  </span>
+            <CardHeader className="text-center sm:text-left">
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1">
+                <CardTitle className="text-2xl font-bold flex items-center gap-2">
+                  <span>Welcome to</span>
+                  <div className="inline-flex items-center gap-1.5">
+                    <img
+                      src="/logo.png"
+                      alt="AnimeVerse Logo"
+                      className="h-7 w-7 object-contain inline-block shrink-0"
+                    />
+                    <span>AnimeVerse</span>
+                  </div>
                 </CardTitle>
               </div>
               <CardDescription>
@@ -126,7 +138,7 @@ const Auth = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       required
                       disabled={isLoading}
-                      className="rounded-full"
+                      className="rounded-lg"
                     />
                   </div>
                   <div className="space-y-2">
@@ -139,7 +151,7 @@ const Auth = () => {
                       onChange={(e) => setPassword(e.target.value)}
                       required
                       disabled={isLoading}
-                      className="rounded-full"
+                      className="rounded-lg"
                     />
                   </div>
                   <div className="flex justify-end">
@@ -153,10 +165,38 @@ const Auth = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full btn-glow rounded-full"
+                    className="w-full btn-glow rounded-lg"
                     disabled={isLoading}
                   >
                     {isLoading ? "Signing in..." : "Sign In with Email"}
+                  </Button>
+
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={handleGoogleLogin}
+                    disabled={isLoading}
+                    className="w-full rounded-lg flex items-center justify-center gap-2 border-border bg-background hover:bg-accent text-foreground transition-colors"
+                  >
+                    <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24">
+                      <path
+                        fill="#4285F4"
+                        d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
+                      />
+                      <path
+                        fill="#34A853"
+                        d="M12 24c3.24 0 6.01-1.08 8.01-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.13 1.16-3.19 0-5.88-2.16-6.84-5.07H1.14v3.15C3.15 21.3 7.27 24 12 24z"
+                      />
+                      <path
+                        fill="#FBBC05"
+                        d="M5.16 14.13c-.24-.72-.38-1.49-.38-2.28s.14-1.56.38-2.28V6.42H1.14C.41 7.87 0 9.51 0 11.25s.41 3.38 1.14 4.83l4.02-3.15z"
+                      />
+                      <path
+                        fill="#EA4335"
+                        d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C18.01 1.19 15.24 0 12 0 7.27 0 3.15 2.7 1.14 6.42l4.02 3.15c.96-2.91 3.65-5.07 6.84-5.07z"
+                      />
+                    </svg>
+                    <span>Continue with Google</span>
                   </Button>
                 </form>
               </TabsContent>
@@ -173,7 +213,7 @@ const Auth = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       required
                       disabled={isLoading}
-                      className="rounded-full"
+                      className="rounded-lg"
                     />
                   </div>
                   <div className="space-y-2">
@@ -186,22 +226,22 @@ const Auth = () => {
                       onChange={(e) => setPassword(e.target.value)}
                       required
                       disabled={isLoading}
-                      className="rounded-full"
+                      className="rounded-lg"
                     />
                     <p className="text-xs text-muted-foreground">
                       Password must be at least 6 characters long.
                     </p>
                   </div>
-                  <div className="p-3 bg-amber-950/40 border border-amber-800/60 rounded-md flex items-start space-x-2">
+                  <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-md flex items-start space-x-2">
                     <AlertCircle className="h-4 w-4 text-amber-500 mt-0.5 shrink-0" />
-                    <p className="text-xs text-amber-300">
+                    <p className="text-xs text-amber-600 dark:text-amber-400">
                       After registering, you may need to check your email for a
                       verification link before being able to sign in.
                     </p>
                   </div>
                   <Button
                     type="submit"
-                    className="w-full btn-glow rounded-full"
+                    className="w-full btn-glow rounded-lg"
                     disabled={isLoading}
                   >
                     {isLoading ? "Creating account..." : "Create Account"}

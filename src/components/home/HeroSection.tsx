@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import {
   motion,
   useMotionValue,
@@ -10,7 +9,6 @@ import {
   useTransform,
   type Variants,
 } from "framer-motion";
-import { Gif } from "./Gif";
 
 const FLOATING_IMAGES = [
   "/ok.png",
@@ -43,14 +41,13 @@ export const HeroSection = () => {
 
   const springConfig = { damping: 25, stiffness: 150 };
   const parallaxX = useSpring(
-    useTransform(mouseX, [-0.5, 0.5], [-20, 20]),
+    useTransform(mouseX, [-0.5, 0.5], [-16, 16]),
     springConfig,
   );
   const parallaxY = useSpring(
-    useTransform(mouseY, [-0.5, 0.5], [-15, 15]),
+    useTransform(mouseY, [-0.5, 0.5], [-12, 12]),
     springConfig,
   );
-
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
@@ -62,11 +59,11 @@ export const HeroSection = () => {
     const generatedItems: StripItem[] = FLOATING_IMAGES.map((src, index) => ({
       id: index,
       src,
-      size: Math.floor(Math.random() * 15) + 70,
+      size: Math.floor(Math.random() * 12) + 56,
       duration: Math.random() * 2 + 3.5,
-      delay: index * 0.1,
-      yOffset: Math.random() * 8 + 6,
-      rotate: (index % 2 === 0 ? 1 : -1) * (Math.random() * 12 + 4),
+      delay: index * 0.08,
+      yOffset: Math.random() * 6 + 5,
+      rotate: (index % 2 === 0 ? 1 : -1) * (Math.random() * 10 + 3),
       zIndex: Math.floor(Math.random() * 10) + 1,
     }));
 
@@ -74,7 +71,7 @@ export const HeroSection = () => {
   }, []);
 
   const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: { opacity: 0, y: 20 },
     show: (delay: number = 0) => ({
       opacity: 1,
       y: 0,
@@ -85,17 +82,31 @@ export const HeroSection = () => {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-black py-14 lg:py-20"
+      className="relative min-h-[88vh] w-full flex flex-col items-center justify-center overflow-hidden bg-background text-foreground py-20 lg:py-28 transition-colors duration-300"
     >
+      {/* Grain overlay — adapts opacity to match theme seamlessly */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.08] dark:opacity-[0.12] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+        }}
+      />
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-          {/* 4. Overlapping PNG Strip with Parallax Tracking */}
+        <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
+          {/* Sticker shelf */}
           <motion.div
             style={{ x: parallaxX, y: parallaxY }}
-            initial={{ opacity: 0, y: -15 }}
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex items-center justify-center mb-6 max-w-full overflow-visible px-4"
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="relative flex items-center justify-center mb-4 max-w-full px-6 py-3 rounded-full border border-border/60 bg-muted/30 backdrop-blur-sm"
           >
             {items.map((item, index) => (
               <motion.div
@@ -103,7 +114,7 @@ export const HeroSection = () => {
                 className="relative group cursor-pointer"
                 style={{
                   zIndex: item.zIndex,
-                  marginLeft: index === 0 ? "0px" : "-18px",
+                  marginLeft: index === 0 ? "0px" : "-14px",
                 }}
                 initial={{ opacity: 0, scale: 0.6, rotate: item.rotate }}
                 animate={{
@@ -135,95 +146,51 @@ export const HeroSection = () => {
                   src={item.src}
                   alt=""
                   aria-hidden="true"
-                  className="object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)] transition-all duration-300 group-hover:scale-125 group-hover:z-50 saturate-110 contrast-110"
+                  className="object-contain drop-shadow-[0_6px_14px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_6px_14px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-125 group-hover:z-50"
                   style={{
                     width: `${item.size}px`,
                     height: `${item.size}px`,
-                    WebkitMaskImage:
-                      "linear-gradient(to bottom, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%)",
-                    maskImage:
-                      "linear-gradient(to bottom, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%)",
                   }}
                 />
               </motion.div>
             ))}
           </motion.div>
 
-          {/* 5. Enhanced Heading with Animated Gradient Text */}
-          <h1
-            style={{ fontFamily: "'Raleway', sans-serif" }}
-            className="flex flex-wrap items-center justify-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] tracking-tighter text-white gap-x-[0.3em] font-semibold "
-          >
-            <motion.span
-              initial="hidden"
-              animate="show"
-              custom={0.2}
-              variants={fadeUp}
-              className="bg-gradient-to-br from-white via-white/95 to-white/70 bg-clip-text text-transparent drop-shadow-sm"
-            >
-              Track
-            </motion.span>
-
-            <motion.span
-              initial="hidden"
-              animate="show"
-              custom={0.25}
-              variants={fadeUp}
-              className="bg-gradient-to-br from-white via-white/90 to-white/60 bg-clip-text text-transparent drop-shadow-sm"
-            >
-              Your
-            </motion.span>
-            <motion.span
-              initial="hidden"
-              animate="show"
-              custom={0.25}
-              variants={fadeUp}
-              className="bg-gradient-to-br from-white via-white/90 to-white/60 bg-clip-text text-transparent drop-shadow-sm"
-            >
-              Anime
-            </motion.span>
-
-            <motion.span
-              initial="hidden"
-              animate="show"
-              custom={0.25}
-              variants={fadeUp}
-              className="bg-gradient-to-br from-white via-white/90 to-white/60 bg-clip-text text-transparent drop-shadow-sm"
-            >
-              Journey
-            </motion.span>
-          </h1>
-
-          {/* Subtext */}
-          <motion.p
+          {/* Headline */}
+          <motion.h1
             initial="hidden"
             animate="show"
-            custom={0.5}
+            custom={0.15}
             variants={fadeUp}
-            className="text-[10px] md:text-xs font-black text-white/70  ps-[0.5em] mb-1 mt-8 tracking-widest"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
+            style={{
+              fontFamily: "'Bricolage Grotesque', 'Raleway', sans-serif",
+            }}
+            className="text-5xl sm:text-6xl md:text-8xl leading-[0.95] tracking-tight bg-gradient-to-br from-foreground via-foreground/95 to-foreground/70 bg-clip-text text-transparent drop-shadow-sm font-semibold"
           >
-            Effortlessly track and explore your anime world, all in one place.
-          </motion.p>
+            Track Your Anime
+            <br />
+            <span className="bg-gradient-to-br from-foreground via-foreground/95 to-foreground/70 bg-clip-text text-transparent drop-shadow-sm text-8xl italic font-thin">
+              Journey
+            </span>
+          </motion.h1>
 
-          {/* Buttons */}
+          {/* CTA */}
           <motion.div
             initial="hidden"
             animate="show"
-            custom={0.65}
+            custom={0.48}
             variants={fadeUp}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 w-full sm:w-auto px-4"
+            className="flex items-center justify-center mt-10"
           >
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="group w-full sm:w-auto px-8 py-6 rounded-full border-black/15 bg-white backdrop-blur-md text-black font-semibold transition-all duration-300 hover:scale-105 hover:bg-white/90 hover:border-black/30 hover:text-black active:scale-95 shadow-sm"
+              className="group px-8 py-6 rounded-full font-medium text-base text-primary-foreground bg-primary transition-all duration-300 hover:scale-[1.03] hover:bg-primary/90 active:scale-95 shadow-md"
+              style={{ fontFamily: "'Inter', sans-serif" }}
             >
               <Link
                 to="/browse"
-                className="flex items-center justify-center gap-2 text-base tracking-wide"
-                style={{ fontFamily: "'Poppins', sans-serif" }}
+                className="flex items-center justify-center gap-2"
               >
                 Library
               </Link>

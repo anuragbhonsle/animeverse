@@ -26,6 +26,18 @@ export interface UserAnimeEntry {
 
 export const animeData: Anime[] = [
   {
+    id: 3,
+    title: "Death Note",
+    imageUrl:
+      "https://i.pinimg.com/originals/b2/f3/eb/b2f3eb41b12064f908ecd1a337e46658.gif",
+    description:
+      "A high school student discovers a supernatural notebook that grants him the power to kill anyone whose name he writes in it.",
+    genres: ["Thriller", "Psychological", "Supernatural"],
+    episodes: 37,
+    rating: 8.6,
+    releaseYear: 2006,
+  },
+  {
     id: 45,
     title: "JoJo’s Bizarre Adventure",
     imageUrl:
@@ -61,18 +73,7 @@ export const animeData: Anime[] = [
     rating: 9.1,
     releaseYear: 2009,
   },
-  {
-    id: 3,
-    title: "Death Note",
-    imageUrl:
-      "https://i.pinimg.com/originals/b2/f3/eb/b2f3eb41b12064f908ecd1a337e46658.gif",
-    description:
-      "A high school student discovers a supernatural notebook that grants him the power to kill anyone whose name he writes in it.",
-    genres: ["Thriller", "Psychological", "Supernatural"],
-    episodes: 37,
-    rating: 8.6,
-    releaseYear: 2006,
-  },
+
   {
     id: 4,
     title: "One Punch Man",

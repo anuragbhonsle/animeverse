@@ -19,6 +19,7 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
   const handleReset = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -50,10 +51,10 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Navbar />
 
-      <main className="relative flex-grow flex items-center justify-center py-26 md:py-26 px-4 overflow-hidden bg-secondary">
+      <main className="relative flex-grow flex items-center justify-center py-26 md:py-26 px-4 overflow-hidden bg-background">
         {/* Ambient glow */}
 
         <Card className="relative w-full max-w-md mx-auto shadow-xl border-border/60 bg-card/90 backdrop-blur-sm">
@@ -74,7 +75,7 @@ const ForgotPassword = () => {
                   placeholder="your@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="rounded-full"
+                  className="rounded-xl"
                 />
               </div>
               <div className="flex justify-end">
@@ -88,7 +89,7 @@ const ForgotPassword = () => {
               </div>
               <Button
                 type="submit"
-                className="w-full btn-glow rounded-full"
+                className="w-full btn-glow rounded-xl"
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Send Reset Link"}

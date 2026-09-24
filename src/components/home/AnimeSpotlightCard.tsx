@@ -35,12 +35,12 @@ export const AnimeSpotlightCard = () => {
   };
 
   return (
-    <section className="relative min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-black py-20 lg:py-20">
-      {/* Background Glow Accents */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-black blur-[120px] pointer-events-none rounded-full" />
+    <section className="relative min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-background text-foreground py-20 lg:py-20 transition-colors duration-300">
+      {/* Background Glow Accents - adapted for both light and dark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/10 dark:bg-primary/20 blur-[120px] pointer-events-none rounded-full" />
 
-      <div className="group relative w-full max-w-5xl mx-autos z-10">
-        <div className=" text-center flex flex-col items-center">
+      <div className="group relative w-full max-w-5xl mx-auto z-10 px-4">
+        <div className="text-center flex flex-col items-center mb-8">
           <SectionHeading
             prefix="Explore Your"
             highlight="Favorite"
@@ -48,10 +48,9 @@ export const AnimeSpotlightCard = () => {
           />
         </div>
 
-        <div className="relative aspect-[16/9] sm:aspect-[16/8.5] w-full overflow-hidden rounded-3xl sm:rounded-3xl bg-neutral-950 border border-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.8)] ">
-          {/* Cinematic Gradient Overlays */}
-
-          <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/20 via-transparent to-black/40 pointer-events-none" />
+        <div className="relative aspect-[16/9] sm:aspect-[16/8.5] w-full overflow-hidden rounded-3xl bg-card border border-border shadow-xl dark:shadow-[0_30px_100px_rgba(0,0,0,0.8)] transition-all">
+          {/* Subtle Gradient Overlay for contrast */}
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-background/10 via-transparent to-background/20 pointer-events-none" />
 
           {/* Active Image Animation */}
           <AnimatePresence mode="wait">
@@ -63,7 +62,7 @@ export const AnimeSpotlightCard = () => {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               src={currentAnime.imageUrl}
               alt={`Scene from ${currentAnime.title}`}
-              className="absolute inset-0 h-full w-full object-cover contrast-110 saturate-110 brightness-98 rounded-3xl p-4"
+              className="absolute inset-0 h-full w-full object-cover contrast-105 saturate-105 brightness-95 dark:brightness-98 rounded-3xl p-2 sm:p-4"
             />
           </AnimatePresence>
 
@@ -72,7 +71,7 @@ export const AnimeSpotlightCard = () => {
             {currentAnime.genres?.slice(0, 3).map((genre) => (
               <span
                 key={genre}
-                className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[10px] sm:text-xs font-medium tracking-wide text-white/90"
+                className="px-3 py-1 rounded-full bg-background/70 backdrop-blur-md border border-border/60 text-[10px] sm:text-xs font-medium tracking-wide text-foreground shadow-sm"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 {genre}
@@ -81,10 +80,10 @@ export const AnimeSpotlightCard = () => {
           </div>
 
           {/* Floating Caption / Information Bar */}
-          <div className="absolute bottom-4 sm:bottom-6 left-1/2 z-20 flex w-[92%] sm:w-[94%] -translate-x-1/2 items-center justify-between gap-3 sm:gap-6 rounded-2xl sm:rounded-full bg-black/60 backdrop-blur-xl border border-white/10 p-3.5 sm:p-4 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)]">
+          <div className="absolute bottom-4 sm:bottom-6 left-1/2 z-20 flex w-[92%] sm:w-[94%] -translate-x-1/2 items-center justify-between gap-3 sm:gap-6 rounded-2xl sm:rounded-full bg-background/80 backdrop-blur-xl border border-border/80 p-3.5 sm:p-4 shadow-lg dark:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)]">
             <div className="flex min-w-0 flex-1 items-center gap-3.5 sm:gap-4">
               {/* Thumbnail Image */}
-              <div className="hidden size-11 shrink-0 overflow-hidden rounded-full sm:block relative border border-white/15 shadow-md">
+              <div className="hidden size-11 shrink-0 overflow-hidden rounded-full sm:block relative border border-border shadow-md">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentAnime.id}
@@ -103,11 +102,11 @@ export const AnimeSpotlightCard = () => {
               <div className="min-w-0">
                 <div className="mb-0.5 flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/75 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                   </span>
                   <p
-                    className="whitespace-nowrap text-[9px] font-bold uppercase tracking-[0.2em] text-violet-400 sm:text-[10px]"
+                    className="whitespace-nowrap text-[9px] font-bold uppercase tracking-[0.2em] text-primary sm:text-[10px]"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     Featured Spotlight
@@ -120,7 +119,7 @@ export const AnimeSpotlightCard = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.2 }}
-                    className="truncate text-sm sm:text-base font-bold tracking-tight text-white"
+                    className="truncate text-sm sm:text-base font-bold tracking-tight text-foreground"
                     style={{ fontFamily: "'Raleway', sans-serif" }}
                   >
                     {currentAnime.title}
@@ -132,15 +131,15 @@ export const AnimeSpotlightCard = () => {
             {/* Quick Stats & Actions */}
             <div className="flex items-center gap-4 sm:gap-6">
               {/* Episodes & Rating Stats */}
-              <div className="hidden md:flex items-center gap-4 border-r border-white/10 pr-6">
-                <div className="flex items-center gap-1.5 text-neutral-300">
-                  <Tv className="size-3.5 text-violet-400" />
+              <div className="hidden md:flex items-center gap-4 border-r border-border pr-6">
+                <div className="flex items-center gap-1.5 text-muted-foreground">
+                  <Tv className="size-3.5 text-primary" />
                   <span className="font-mono text-xs font-semibold">
                     {currentAnime.episodes} eps
                   </span>
                 </div>
                 {currentAnime.rating && (
-                  <div className="flex items-center gap-1.5 text-neutral-300">
+                  <div className="flex items-center gap-1.5 text-muted-foreground">
                     <Star className="size-3.5 fill-amber-400 text-amber-400" />
                     <span className="font-mono text-xs font-semibold">
                       {currentAnime.rating}
@@ -152,7 +151,7 @@ export const AnimeSpotlightCard = () => {
               <Button
                 size="sm"
                 onClick={handleNextAnime}
-                className="shrink-0 h-10 rounded-full bg-white text-black hover:bg-neutral-200 hover:scale-[1.02] active:scale-[0.98] transition-all text-xs font-bold uppercase tracking-wider gap-2 px-5 shadow-lg"
+                className="shrink-0 h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all text-xs font-bold uppercase tracking-wider gap-2 px-5 shadow-md"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 Next <SkipForward className="size-3.5 fill-current" />

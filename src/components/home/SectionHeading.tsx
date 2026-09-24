@@ -1,4 +1,3 @@
-// components/ui/section-heading.tsx
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -7,8 +6,8 @@ interface SectionHeadingProps {
   /** Text before the highlighted word(s) */
   prefix?: string;
 
-  /** The word/phrase to display normally */
-  highlight: string;
+  /** The word/phrase to display */
+  highlight?: string;
 
   /** Text after the highlighted word(s) */
   suffix?: string;
@@ -22,9 +21,6 @@ interface SectionHeadingProps {
   className?: string;
 
   align?: "center" | "left";
-
-  /** Color for prefix/suffix text */
-  textColor?: "white" | "black";
 }
 
 export const SectionHeading = ({
@@ -35,79 +31,59 @@ export const SectionHeading = ({
   subtext,
   className,
   align = "center",
-  textColor = "white",
 }: SectionHeadingProps) => {
   const isCenter = align === "center";
-  const textGradientClass =
-    "bg-gradient-to-br from-white via-white/90 to-white/60 bg-clip-text text-transparent drop-shadow-sm";
+
+  // Unified gradient applied equally across all text parts
+  const headingTextClass =
+    "bg-gradient-to-br from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-transparent font-bold";
 
   return (
-    <div className={cn("mb-14", isCenter && "text-center", className)}>
+    <div className={cn("mb-12 md:mb-16", isCenter && "text-center", className)}>
+      {/* Eyebrow Label */}
       {eyebrow && (
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="inline-block text-sm font-semibold tracking-wide uppercase text-violet-400 mb-3"
-          style={{ fontFamily: "'Raleway', sans-serif" }}
+          transition={{ duration: 0.4 }}
+          className="inline-block text-xs sm:text-sm font-semibold tracking-wider uppercase text-primary mb-2.5"
         >
           {eyebrow}
         </motion.span>
       )}
 
+      {/* Main Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className={cn(
-          "flex flex-wrap items-center text-3xl sm:text-4xl md:text-5xl font-medium leading-[1.1] tracking-tight gap-x-[0.3em]",
+          "flex flex-wrap items-center text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight gap-x-[0.3em]",
           isCenter ? "justify-center" : "justify-start",
         )}
-        style={{ fontFamily: "'Raleway', sans-serif" }}
       >
-        {prefix && (
-          <span
-            className={textColor === "black" ? "text-black" : textGradientClass}
-          >
-            {prefix}
-          </span>
-        )}
-
-        <span
-          className={cn(
-            "inline-block font-sans font-normal tracking-normal px-1",
-            textColor === "black" ? "text-black" : "text-white",
-          )}
-        >
-          {highlight}
-        </span>
-
-        {suffix && (
-          <span
-            className={textColor === "black" ? "text-black" : textGradientClass}
-          >
-            {suffix}
-          </span>
-        )}
+        {prefix && <span className={headingTextClass}>{prefix}</span>}
+        {highlight && <span className={headingTextClass}>{highlight}</span>}
+        {suffix && <span className={headingTextClass}>{suffix}</span>}
       </motion.h2>
 
+      {/* Subtext Paragraph */}
       {subtext && (
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.6,
+            duration: 0.5,
             ease: "easeOut",
             delay: 0.1,
           }}
           className={cn(
-            "text-sm sm:text-base md:text-lg mt-4 text-black/70 dark:text-white/70",
-            isCenter && "mx-auto max-w-xl",
+            "text-sm sm:text-base md:text-lg mt-3 text-muted-foreground leading-relaxed",
+            isCenter && "mx-auto max-w-2xl",
           )}
-          style={{ fontFamily: "'Poppins', sans-serif" }}
         >
           {subtext}
         </motion.p>

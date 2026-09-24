@@ -51,7 +51,7 @@ const Browse = () => {
     }
 
     // Apply genre filter
-    if (selectedGenre) {
+    if (selectedGenre && selectedGenre !== "all") {
       filtered = filtered.filter((anime) =>
         anime.genres.includes(selectedGenre),
       );
@@ -122,10 +122,10 @@ const Browse = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-secondary">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Navbar />
 
-      <main className="flex-grow container px-4 py-8 bg-secondary">
+      <main className="flex-grow container px-4 py-8 bg-background">
         <h1 className="text-3xl font-bold mb-6">Discover Anime</h1>
 
         {/* Search and filters */}

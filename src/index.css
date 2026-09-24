@@ -6,9 +6,51 @@
 @tailwind utilities;
 
 @layer base {
-  :root,
-  .dark,
-  :root[class~="light"] {
+  /* Default: Light Mode */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 262 83% 95%;
+    --accent-foreground: 262 83% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.5rem;
+
+    /* Anime dynamic palette */
+    --anime-primary: #7c3aed;
+    --anime-secondary: #6d28d9;
+    --anime-tertiary: #8b5cf6;
+    --anime-dark: #140a2e;
+    --anime-light: #f3f4f6;
+    --anime-purple: #7c3aed;
+    --anime-light-purple: #a78bfa;
+    --anime-deep-purple: #4c1d95;
+  }
+
+  /* Dark Mode Overrides */
+  .dark {
     --background: 240 10% 4%;
     --foreground: 0 0% 98%;
 
@@ -37,9 +79,6 @@
     --input: 240 5% 20%;
     --ring: 265 72% 48%;
 
-    --radius: 0.5rem;
-
-    /* Anime dynamic palette */
     --anime-primary: #6d28d9;
     --anime-secondary: #5b21b6;
     --anime-tertiary: #7c3aed;
@@ -64,7 +103,7 @@
       "rlig" 1,
       "calt" 1;
     scroll-behavior: smooth;
-    color-scheme: dark; /* Force browser UI elements like scrollbars to render dark */
+    color-scheme: light dark; /* Lets browser native elements adapt automatically */
   }
 
   h1,
@@ -92,7 +131,7 @@
   html {
     scroll-behavior: smooth;
     font-family: "Satoshi", sans-serif;
-    color-scheme: dark;
+    color-scheme: light dark;
   }
 }
 
@@ -110,7 +149,7 @@
   }
 
   .glass {
-    @apply bg-background/60 backdrop-blur-md border border-white/10 rounded-lg shadow-glow-sm;
+    @apply bg-background/60 backdrop-blur-md border border-border/50 rounded-lg shadow-glow-sm;
   }
 
   .section-title {
@@ -118,7 +157,7 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent;
   }
 
   .text-gradient-purple {
@@ -142,7 +181,7 @@
   }
 
   .btn-anime::after {
-    @apply content-[''] absolute inset-0 bg-white/20 scale-0 rounded-md transition-transform duration-500 ease-out;
+    @apply content-[''] absolute inset-0 bg-primary/20 scale-0 rounded-md transition-transform duration-500 ease-out;
   }
 
   .btn-anime:hover::after {
@@ -288,7 +327,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000; /* Pitch black track */
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
@@ -303,5 +342,5 @@
 /* Firefox scrollbar support */
 * {
   scrollbar-width: thin;
-  scrollbar-color: hsl(var(--muted-foreground) / 0.3) #000000; /* [thumb color] [track color] */
+  scrollbar-color: hsl(var(--muted-foreground) / 0.3) hsl(var(--background));
 }

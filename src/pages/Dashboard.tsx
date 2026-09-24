@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center">
+      <div className="flex min-h-screen items-center justify-center bg-background text-foreground">
         <div className="text-center space-y-4">
           <div className="animate-spin h-10 w-10 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
           <p>Loading your dashboard...</p>
@@ -39,10 +39,10 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-secondary">
+    <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
       <Navbar />
 
-      <main className="flex-grow container px-4 py-8 bg-secondary">
+      <main className="flex-grow container px-4 py-8 bg-background">
         <div className="mb-8">
           <h1 className="text-3xl font-bold">Dashboard</h1>
           <p className="text-muted-foreground">
